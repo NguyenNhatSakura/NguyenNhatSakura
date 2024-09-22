@@ -1,3 +1,5 @@
+<img src="https://raw.githubusercontent.com/NguyenNhatSakura/NguyenNhatSakura/refs/heads/main/Assets/welcome.gif" alt="Gif Welcome Profile">
+
 <h2 align="center">About Me </h2>
 
 ```python
