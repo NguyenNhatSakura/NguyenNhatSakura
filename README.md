@@ -1,6 +1,8 @@
 <img src="https://raw.githubusercontent.com/NguyenNhatSakura/NguyenNhatSakura/refs/heads/main/Assets/welcome.gif" alt="Gif Welcome Profile">
 
-<h2 align="center">About Me </h2>
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+
+<h2 align="center">🧑‍💻 About Me</h2>
 
 ```python
 from typing import Tuple, List, Dict
@@ -54,7 +56,8 @@ class Attributes(NguyenNhatSakura):
 	return langs, specialities, ide, pc
 ```
 
-<h2 align="center">Skills </h2>
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+<h2 align="center">⚙️ My Skills</h2>
 
 <div align="center">
     <img src="https://skillicons.dev/icons?i=ae,bootstrap,androidstudio,html,css,vscode,visualstudio,github,au,bash,git,r,blender,discord,discordjs,bots,java,lua,php,ps,pr,xd,nodejs,python,javascript,typescript,bash,firebase,mongodb,c,cs,cpp,java,nextjs,mysql,codepen,cloudflare,ai,heroku,instagram,robloxstudio,unity,unreal" />
