@@ -1,0 +1,5 @@
+Version: 1.3.4
+Facebook Admin: https://facebook.com/NguyenNhatSakura
+Update Log: 
+- Bug fixes
+- Added new feature
