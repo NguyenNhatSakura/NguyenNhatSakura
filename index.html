@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retrieve Key</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .key {
+            font-size: 1.5em;
+            color: #4CAF50;
+            margin: 20px 0;
+        }
+        .instructions {
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Your Key</h1>
+    <p id="key" class="key">Loading...</p>
+    <p class="instructions">Copy the key and paste it into the tool.</p>
+</div>
+
+<script>
+    // Function to get the key from URL parameters
+    function getKeyFromURL() {
+        const params = new URLSearchParams(window.location.search);
+        return params.get('key');
+    }
+
+    // Display the key on the page
+    const key = getKeyFromURL();
+    if (key) {
+        document.getElementById('key').textContent = key;
+    } else {
+        document.getElementById('key').textContent = "No key provided.";
+    }
+</script>
+
+</body>
+</html>
