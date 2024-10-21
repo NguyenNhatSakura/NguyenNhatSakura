@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Whitelist</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #74ebd5 0%, #acb6e5 100%);
+            font-family: 'Arial', sans-serif;
+            background-size: 400% 400%;
+            animation: gradientMove 15s ease infinite;
+        }
+
+        /* Hiệu ứng di chuyển nền */
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 2s ease-in-out;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 2em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .key-box {
+            font-size: 1.5em;
+            color: #555;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-top: 20px;
+            word-wrap: break-word;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .copy-btn {
+            margin-top: 20px;
+            padding: 12px 25px;
+            font-size: 1.1em;
+            background-color: #74ebd5;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .copy-btn:hover {
+            background-color: #62c8be;
+            transform: translateY(-3px);
+        }
+
+        .copy-btn:active {
+            background-color: #55b0a5;
+            transform: translateY(0px);
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .toast {
+            visibility: hidden;
+            min-width: 250px;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            padding: 16px;
+            position: fixed;
+            z-index: 1;
+            right: 30px;
+            bottom: 30px;
+            font-size: 17px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .toast.show {
+            visibility: visible;
+            animation: fadeInOut 4s ease;
+        }
+
+        @keyframes fadeInOut {
+            0% { bottom: 0; opacity: 0; }
+            10% { bottom: 30px; opacity: 1; }
+            90% { bottom: 30px; opacity: 1; }
+            100% { bottom: 0; opacity: 0; }
+        }
+    </style>
+    <script>
+        function getKeyFromUrl() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('key');
+        }
+
+        function displayKey() {
+            const key = getKeyFromUrl();
+            if (key) {
+                document.getElementById('key-box').textContent = key;
+            }
+        }
+
+        function copyKey() {
+            const keyText = document.getElementById('key-box').textContent;
+            navigator.clipboard.writeText(keyText).then(function() {
+                showToast("Key copied to clipboard!");
+            }, function() {
+                showToast("Failed to copy key.");
+            });
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.className = "toast show";
+            setTimeout(() => {
+                toast.className = toast.className.replace("show", "");
+            }, 4000);
+        }
+
+        window.onload = displayKey;
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Whitelist Key...</h1>
+        <div class="key-box" id="key-box">Loading...</div>
+        <button class="copy-btn" onclick="copyKey()">Copy Key</button>
+    </div>
+
+    <div id="toast" class="toast">Key copied to clipboard!</div>
+</body>
+</html>
