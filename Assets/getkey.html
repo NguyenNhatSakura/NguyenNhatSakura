@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ke System Start</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #74ebd5 0%, #acb6e5 100%);
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Định dạng cho thông báo */
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        h1 {
+            font-size: 2em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #666;
+        }
+
+        /* Thêm hiệu ứng động cho phần tử */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+      
+        .progress-bar {
+            width: 100%;
+            background-color: #f3f3f3;
+            border-radius: 25px;
+            margin-top: 20px;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 20px;
+            width: 0;
+            background-color: #74ebd5;
+            border-radius: 25px;
+            transition: width 10s linear;
+        }
+    </style>
+    <script>
+        function decodeBase64(base64Str) {
+            return decodeURIComponent(atob(base64Str));
+        }
+
+        function getBase64UrlParam() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('url');
+        }
+
+        function redirectAfterDelay() {
+            const base64Url = getBase64UrlParam();
+            if (base64Url) {
+                const decodedUrl = decodeBase64(base64Url);
+
+                const progress = document.querySelector('.progress');
+                progress.style.width = '100%';
+
+                setTimeout(function() {
+                    window.location.href = decodedUrl;
+                }, 10000);
+            }
+        }
+
+        window.onload = redirectAfterDelay;
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Đang Kiểm Tra Whitelist...</h1>
+        <p>Vui Lòng Đợi Vài Giây.</p>
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+    </div>
+</body>
+</html>
