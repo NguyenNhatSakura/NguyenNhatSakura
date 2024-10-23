@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTSKRS Pricing</title>
+	<link rel="canonical" href="Download.html" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="1295999912890339379.png" type="image/x-icon">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            background: url('10/25/Wgt5d3.png') no-repeat center center fixed;
+            background-size: cover;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background: transparent;
+            z-index: 1000;
+        }
+        .logo img {
+            height: 60px;
+        }
+        nav {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        .navbar {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            padding: 0;
+            margin: 0;
+        }
+        .navbar li {
+            display: inline;
+        }
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+        }
+        .navbar li:last-child {
+            margin-right: 40px;
+        }
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            background: transparent;
+            margin-top: 100px;
+        }
+        .pricing-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .pricing-box {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            width: 300px;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animation */
+        }
+        .pricing-box:hover {
+            transform: scale(1.05) translateY(-10px); /* Enlarge and lift effect */
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5); /* More shadow on hover */
+        }
+        .pricing-box h2 {
+            font-size: 24px;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        .pricing-box .price {
+            font-size: 36px;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+        .pricing-box ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px;
+            text-align: left;
+        }
+        .pricing-box ul li {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+        .pricing-box .button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .leaks-button {
+            background-color: #5a5a5a;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: bold;
+        }
+        .pro-box {
+            background-color: rgba(62, 111, 241, 0.2);
+            border: 2px solid #fff;
+        }
+        .lite-box {
+            background-color: rgba(51, 51, 51, 0.2);
+            border: 2px solid #555;
+        }
+        .pricing-box .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 50px;
+        }
+        .beta-text {
+            font-size: 12px;
+            color: #f0a500;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        footer {
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .footer-content button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .footer-content p {
+            margin: 0;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: rgba(40, 40, 40, 0.9); /* Darker and more transparent background */
+            margin: 15% auto;
+            padding: 30px; /* Increased padding */
+            border-radius: 12px; /* Slightly larger border radius */
+            width: 80%;
+            max-width: 600px;
+            color: #fff;
+            position: relative;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5); /* Added shadow for depth */
+        }
+        .modal-content h2 {
+            font-size: 24px; /* Ensure the title size is consistent */
+        }
+        .modal-content p {
+            font-size: 16px; /* Ensure paragraph size is consistent */
+            margin-top: 10px; /* Add some spacing above paragraphs */
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .modal-content h2 + p {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        .get-api-button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .executor-specs {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #fff;
+            line-height: 1.5;
+        }
+        .download-now {
+            background-color: #28a745;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="1295999912890339379.png" alt="Blame Logo">
+        </div>
+        <nav>
+            <ul class="navbar">
+                <li><a href="index.html">Trang Chủ</a></li>
+                <li><a href="terms.html">Terms</a></li>
+                <li><a href="partners.html">Hợp Tác</a></li>
+                <li><a href="about.html">Về Chúng Tôi</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero">
+        <div class="pricing-container">
+            <div class="pricing-box pro-box">
+                <div class="logo">
+                    <img src="1295999912890339379.png" alt="Logo">
+                </div>
+                <h2>PRO</h2>
+                <div class="price">231,000đ</div>
+                <ul>
+                    <li>✔ 24/24h Hỗ Trợ</li>
+                    <li>✔ Đăng Nhập Hệ Thống</li>
+                    <li>✔ Giao Diện Đẹp Hỗ Trợ Custom</li>
+                    <li>✔ Không Bị Phát Hiện</li>
+                    <li>✔ 94% unc</li>
+                </ul>
+                <a href="" class="leaks-button">
+                    <i class="fas fa-lock"></i> Mua Ngay
+                </a>
+            </div>
+            <div class="pricing-box lite-box">
+                <div class="logo">
+                    <img src="1295999912890339379.png" alt="Logo">
+                </div>
+                <h2>LITE</h2>
+                <div class="price">Miễn Phí <sup class="beta-text">Thử Nghiệm</sup></div>
+                <ul>
+                    <li>❌ Đăng Nhập Hệ Thống</li>
+                    <li>✔ Sử Dụng API Miễn Phí</li>
+                    <li>✔ 77% UNC</li>
+                    <li>✔ Không Bị Phát Hiện</li>
+                    <li>✔ Giao Diện Đơn Giản</li>
+                </ul>
+                <a href="https://oklink.cfd/Wyz" class="button">Tải Xuống</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
