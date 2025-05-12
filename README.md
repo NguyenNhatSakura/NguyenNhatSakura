@@ -48,3 +48,6 @@ Hehe~ another cutie has been caught.
 [![](https://img.shields.io/badge/Discord-7289DA?logo=discord&logoColor=white)](https://discord.gg/Hk4FTJt9sf)
 [![](https://img.shields.io/badge/Mail-D14836?logo=gmail&logoColor=white)](mailto:minhtientiny@gmail.com)
 [![](https://img.shields.io/badge/Telegram-2ca5e0?logo=telegram&logoColor=white)](https://t.me/khuongdua_dev)
+
+### **📑Random Dev Quote**
+![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical)
