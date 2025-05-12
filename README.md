@@ -49,5 +49,5 @@ Hehe~ another cutie has been caught.
 [![](https://img.shields.io/badge/Mail-D14836?logo=gmail&logoColor=white)](mailto:minhtientiny@gmail.com)
 [![](https://img.shields.io/badge/Telegram-2ca5e0?logo=telegram&logoColor=white)](https://t.me/khuongdua_dev)
 
-### **📑Random Dev Quote**
+## **📑Random Dev Quote**
 ![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical)
