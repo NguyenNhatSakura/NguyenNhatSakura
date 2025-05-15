@@ -1,0 +1,122 @@
+@use 'mixins';
+
+.skills {
+  background-color: var(--clr-neutral-800);
+
+  &__item {
+    height: 100%;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-block: var(--size-600);
+    user-select: none;
+
+    @include mixins.breakpoint-up(mobile-small) {
+      margin-block: var(--size-600);
+    }
+
+    @include mixins.breakpoint-up(mobile-large) {
+      height: 75px;
+      width: 100px;
+      margin-block: var(--size-700);
+    }
+
+    @include mixins.breakpoint-up(tablet-small) {
+      margin-block: var(--size-800);
+    }
+
+    @include mixins.breakpoint-up(tablet-medium) {
+      height: 100px;
+      width: 250px;
+    }
+  }
+
+  &__image {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    user-select: none;
+    filter: grayscale(100%) drop-shadow(0 0 0em var(--skill-colour));
+    opacity: 25%;
+    will-change: filter;
+    transition: opacity 0.3s var(--animation-timing),
+      filter 0.3s var(--animation-timing);
+
+    &:hover {
+      filter: grayscale(0%) drop-shadow(0 0 1em var(--skill-colour));
+      opacity: 100;
+
+      @include mixins.breakpoint-up(tablet-medium) {
+        filter: grayscale(0%) drop-shadow(0 0 1.5em var(--skill-colour));
+      }
+    }
+  }
+
+  &__slider {
+    position: relative;
+    overflow: hidden;
+    -webkit-mask: linear-gradient(
+      90deg,
+      transparent,
+      white 20%,
+      white 80%,
+      transparent
+    );
+    mask: linear-gradient(
+      90deg,
+      transparent,
+      white 20%,
+      white 80%,
+      transparent
+    );
+  }
+
+  &__list {
+    --item-gap: 3rem;
+    display: flex;
+    animation: scroll 20s linear infinite;
+    gap: var(--item-gap);
+    width: calc(100px * 16);
+
+    @include mixins.breakpoint-up(mobile-large) {
+      width: calc(100px * 16);
+    }
+
+    @include mixins.breakpoint-up(tablet-medium) {
+      width: calc(250px * 16);
+      --item-gap: 4rem;
+    }
+
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(calc(-100px * 8 - (var(--item-gap) / 2)));
+      }
+    }
+
+    @include mixins.breakpoint-up(mobile-large) {
+      @keyframes scroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(calc(-100px * 8 - (var(--item-gap) / 2)));
+        }
+      }
+    }
+
+    @include mixins.breakpoint-up(tablet-medium) {
+      @keyframes scroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(calc(-250px * 8 - 2em));
+        }
+      }
+    }
+  }
+}
