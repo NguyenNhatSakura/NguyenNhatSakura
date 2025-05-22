@@ -19,10 +19,10 @@ I'm currently studying software engineering. Four years of College have passed, 
 <p align="center"><img width="50%" src="https://github-readme-stats.vercel.app/api?username=NguyenNhatSakura&show_icons=true&count_private=true&theme=react&hide_border=true&bg_color=0D1117"/> <img width="45%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=NguyenNhatSakura&show_icons=true&count_private=true&theme=react&hide_border=true&bg_color=0D1117&layout=compact"/>
 </p>
 
-<!-- ## **🎧 Spotify**
+## **🎧 Spotify**
 <p align="center">
-<a href="https://spotify-github-profile.vercel.app/api/view?uid=z8vtap612j1ajql4wsyhl074i&redirect=true"><img src="https://spotify-github-profile.vercel.app/api/view?uid=z8vtap612j1ajql4wsyhl074i&cover_image=true&theme=default&show_offline=true&background_color=0d11170&interchange=false&bar_color_cover=true"></a><a href="https://open.spotify.com/user/z8vtap612j1ajql4wsyhl074i?si=6962aa5c8435476f"><img width="525" src="https://spotify-recently-played-readme.vercel.app/api?user=z8vtap612j1ajql4wsyhl074i"></a>
-</p> -->
+<a href="https://open.spotify.com/user/313wevh4qwgdvhqg3kjgxidy5a34?si=6962aa5c8435476f"><img width="525" src="https://spotify-recently-played-readme.vercel.app/api?user=313wevh4qwgdvhqg3kjgxidy5a34"></a>
+</p>
 
 ## **🧋Cutie Counter**
 <!-- <p align="center">
@@ -49,7 +49,6 @@ Hehe~ another cutie has been caught.
 [![](https://img.shields.io/badge/Mail-D14836?logo=gmail&logoColor=white)](mailto:minhtientiny@gmail.com)
 [![](https://img.shields.io/badge/Telegram-2ca5e0?logo=telegram&logoColor=white)](https://t.me/khuongdua_dev)
 [![](https://img.shields.io/badge/Steam-1a6a98?logo=steam&logoColor=white)](https://steamcommunity.com/id/nguyenhatdev)
-[![MiyagawaMizu](https://mizu.is-a.dev/public/miyagawamizu.png)](https://l.facebook.com/l.php?u=https%3A%2F%2Fgetspyderx.is-a.dev%2Fdev%2Fnguyenminhnhat%3Ffbclid%3DIwZXh0bgNhZW0CMTAAYnJpZBExN1V0NktSVXFRWk9MdU9WUgEerCiPs3vlxPXM0jgY-2rBkgl4vV7XibZ_O9Nha8cimxxmZTODsUlDkuGw4mY_aem_y9N4RX8w4zoMK3PzCYhRHg&h=AT0ZPQTYaklR8qI-1TWTHoWTMjTlHXPqTo4hQkn6mriHF6aGv93kJ97aolyEBtRlA1M0eVHKa51N2HuYrifqeuMmhJCEhauKvuOQXhhK6_UsW6UD6qJZ2VbfYsnscH5V9_F74ObYjhKAZpfa3oGTlQ)
 
 ## **📑Random Dev Quote**
 ![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical)
