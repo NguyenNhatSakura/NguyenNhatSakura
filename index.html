@@ -22,6 +22,28 @@
     <link rel="stylesheet" href="css/style.css" />
     <script async src="/scripts/fuckdevtools.js" />
     <script async src="/scripts/html-obf.js" />
+        <script>
+        // PROTECTION: Disable DevTools
+        HtmlGuard.protections.antiDevTools();
+
+        // PROTECTION: Disable context menu
+        HtmlGuard.protections.blockContextMenu();
+
+        // PROTECTION: Disable drag
+        HtmlGuard.protections.blockDrag();
+
+        // PROTECTION: Disable selection
+        HtmlGuard.protections.blockSelection();
+
+        // PROTECTION: Disable console output
+        HtmlGuard.protections.blockConsoleOutput();
+
+        // ADDING: Add link to 'style.css'
+        HtmlGuard.loader.loadStyleByRef("styles.css");
+
+        // ADDING: Run 'test.js' script
+        HtmlGuard.loader.loadScriptBySrc("test.js");
+    </script>
     <title>Nguyễn Minh Nhật | Trang Cá Nhân</title>
   </head>
   <body oncontextmenu="return true;">
