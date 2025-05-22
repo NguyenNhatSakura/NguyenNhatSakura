@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="vi">
+	
+<!-- Mirrored from mizu.is-a.dev/meow by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 May 2025 07:17:56 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Stop copying me</title>
+	</head>
+	<body bgcolor="#212121" link="#aa3b52" vlink="#ab3b52" alink="#d56">
+		<style>
+			body {
+				width: 100%;
+				height: 100vh;
+				margin: 0;
+				padding: 0;
+			}
+			* {
+				box-sizing: border-box;
+			}
+			#spriteXingHui {
+				transform: translate(var(--x), var(--y)) rotateY(var(--r));
+				position: fixed;
+				width: 200px;
+				height: 200px;
+				animation: xingHuiXianHua 1s infinite steps(22);
+				transition: transform calc(1s / 12) linear;
+				will-change: transform;
+				transform-style: preserve-3d;
+				perspective: 1000px;
+			}
+
+			#spriteXingHui::after {
+				/* content: "Chơi Strinova đi meow~"; */
+				transform: translateZ(0px);
+				font-family: "Playpen Sans", cursive;
+				width: max-content;
+				background-color: rgba(0, 0, 0, 0.5);
+				color: white;
+				padding: 5px;
+				border-radius: 5px;
+				font-size: 0.8em;
+				height: fit-content;
+				position: absolute;
+				top: -30px;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+
+			@keyframes xingHuiXianHua {
+				100% {
+					background-position-x: -4400px;
+				}
+			}
+		</style>
+		<div
+			id="spriteXingHui"
+			style="
+				display: fixed;
+				background: url('src/celestia.png') no-repeat;
+				background-size: fill;
+				--x: 0px;
+				--y: 0px;
+				--r: 0;
+			"></div>
+		<font color="#fff" size="4">
+			<table align="center" border="0" cellpadding="10" cellspacing="0">
+				<thead>
+					<tr>
+						<th>
+							<h1>I didn't share the website's source code meow~</h1>
+						</th>
+					</tr>
+				</thead>
+				<!--  
+				<tbody>
+					<tr>
+						<td>
+							<ul>
+								<li>
+									Rem -
+									<a href="https://rem-prod.vercel.app/" target="_blank"
+										>https://rem-prod.vercel.app/</a
+									>
+								</li>
+								<li>
+									Teo -
+									<a href="https://teochanchan.site/" target="_blank"
+										>https://teochanchan.site/</a
+									>
+								</li>
+								<li>
+									Lemon -
+									<a href="https://talalemon.vercel.app/" target="_blank"
+										>https://talalemon.vercel.app/</a
+									>
+								</li>
+							</ul>
+						</td>
+					</tr>
+				</tbody>
+				-->
+				<tfoot>
+					<tr>
+						<td>
+							<h3>
+								At least change the content, why are you using my words?? meow~
+							</h3>
+							<h3>Stop asking for src code meow~</h3>
+							<h3>I make this for myself meow~</h3>
+							<h3>
+								Do you truly understand what the word "personal" means? meow~
+							</h3>
+						</td>
+					</tr>
+				</tfoot>
+			</table>
+		</font>
+		<script defer src="scripts/celes.js"></script>
+	<!-- Cloudflare Pages Analytics --><script defer src='../static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "5c5a7f8570964855bc6193144426f3a3"}'></script><!-- Cloudflare Pages Analytics --></body>
+
+<!-- Mirrored from mizu.is-a.dev/meow by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 May 2025 07:17:56 GMT -->
+</html>

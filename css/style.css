@@ -1,0 +1,1494 @@
+.list {
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    bottom: 10px;
+    left: 10px;
+    z-index: 999;
+    background: var(--image) center/cover no-repeat;
+    image-rendering: pixelated;
+    filter: opacity(.5);
+    transition: filter .2s ease-in-out, transform .2s ease-in-out;
+}
+
+.list:hover {
+    filter: drop-shadow(2px 2px 1px rgba(0, 0, 0, .377)) opacity(1.0);
+    transform: rotate(10deg);
+}
+
+#status,
+.icon,
+.widget-display,
+.winget-clock {
+    overflow: hidden
+}
+
+#dot-box,
+#status,
+.clock-container,
+.status-bubble,
+.username,
+.widget-display,
+.widget-social,
+.winget-clock,
+img {
+    user-select: none
+}
+
+#large_image,
+#small_image,
+.emoji {
+    image-rendering: auto;
+}
+
+.avatar,
+.avatar-box::after,
+.bubble {
+    position: absolute
+}
+
+#dot-box,
+#status {
+    background-color: #fff;
+    height: 30px;
+    width: 30px
+}
+
+#status *,
+.meta p,
+body,
+footer p {
+    margin: 0
+}
+
+#dot,
+#ping {
+    width: 20px;
+    inset: 0;
+    height: 20px
+}
+
+#discord,
+#discord .rpc,
+#status,
+.container,
+.widget .content,
+body,
+header {
+    display: flex
+}
+
+#status .empty,
+#status p {
+    visibility: hidden
+}
+
+.date,
+.day {
+    min-width: max-content
+}
+
+#status p,
+.date,
+.follow,
+.time {
+    font-weight: 700
+}
+
+.avatar,
+.avatar-box::after {
+    box-shadow: rgba(0, 0, 0, .2) 0 0 4px 0
+}
+
+#discord,
+*,
+.status-bubble {
+    box-sizing: border-box
+}
+
+#large_image,
+#small_image {
+    background: var(--image) center/cover no-repeat
+}
+
+.cookie::before,
+.hairclip::before,
+.pin,
+.poppy::after {
+    image-rendering: pixelated
+}
+
+#activity,
+#discord .rpc .meta *,
+.rpc .meta div {
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.back-to-top.ending,
+.back-to-top.leaved,
+.back-to-top::after,
+.clock-container,
+.mctooltip .tooltip,
+.vignette,
+img {
+    pointer-events: none
+}
+
+@font-face {
+    font-family: 'Minecraft Rus';
+    src: url('../src/assets/fonts/Minecraft.eot');
+    src: local('Minecraft Rus Regular'), local('Minecraft'), url('../src/assets/fonts/Minecraft.woff2') format('woff2'), url('../src/assets/fonts/Minecraft.woff') format('woff'), url('../src/assets/fonts/Minecraft.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal
+}
+
+:root {
+    --text-color-about-me: #000000;
+    --text-color: #101113;
+    --sub-text-color: #353535;
+    --c-repat: 4;
+    --bento-width-total: calc(var(--pixel) * var(--c-repat) + var(--gap-px) * (var(--c-repat) - 1));
+    --repeat: 7;
+    --pixel: 175px;
+    --gap-px: 40px;
+    --cal: calc(var(--pixel) * var(--repeat) + var(--gap-px) * (var(--repeat) - 1))
+}
+
+::-webkit-scrollbar {
+    background-color: transparent;
+    width: 0
+}
+
+.container,
+body,
+html {
+    width: 100%
+}
+
+::-webkit-scrollbar-track {
+    background: 0 0
+}
+
+::-webkit-scrollbar-thumb {
+    background: #f0b281;
+    border-radius: 10px
+}
+
+::selection {
+    /* background-color: #82e9ec7c; */
+    background-color: #8d5aff
+}
+
+#ping,
+.avatar-box::after,
+.bubble {
+    background-color: transparent
+}
+
+* {
+    -webkit-user-drag: none;
+    -moz-user-drag: none;
+    -ms-user-drag: none;
+    -khtml-user-drag: none;
+    -o-user-drag: none
+}
+
+html {
+    min-height: max-content;
+    scroll-behavior: smooth
+}
+
+body {
+    min-height: 100%
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    margin: -15px;
+    z-index: -1;
+    background-color: #fff;
+    background-image: url("../src/assets/images/backgrounds/bg_low.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px)
+}
+
+.container {
+    align-content: center;
+    justify-content: center;
+    flex-direction: row;
+    height: fit-content;
+    padding: 64px
+}
+
+header {
+    position: relative;
+    width: calc(100% - var(--bento-width-total));
+    max-width: 820px;
+    flex-grow: 1;
+    min-height: var(--cal);
+    font-family: "Playpen Sans", cursive;
+    z-index: 1
+}
+
+.about-me {
+    max-width: 500px;
+    margin-right: 30px;
+    margin-bottom: 32px;
+    position: sticky;
+    height: fit-content;
+    top: 64px;
+    left: 64px;
+    color: var(--text-color-about-me)
+}
+
+.about-me * {
+    transition: transform .2s ease-in-out, scale .2s ease-in-out, visibility, opacity .5s
+}
+
+#back-to-top,
+.avatar,
+.bento {
+    transition: transform .2s ease-in-out
+}
+
+.avatar-box {
+    position: relative;
+    width: 184px;
+    height: 184px
+}
+
+.avatar-box::after {
+    z-index: 5;
+    content: "";
+    inset: 0;
+    border-radius: 50%
+}
+
+.bubble::after,
+.bubble::before {
+    content: "";
+    box-shadow: rgba(0, 0, 0, .1) 0 0 2px 0
+}
+
+.avatar {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    object-fit: cover
+}
+
+.hairclip,
+.hairclip::before {
+    width: 40px;
+    height: 40px;
+    position: absolute
+}
+
+.hairclip {
+    top: 20px;
+    left: 5px;
+    z-index: 7
+}
+
+#dot-box,
+.avatar-pendant {
+    z-index: 6;
+    position: absolute
+}
+
+.hairclip::before {
+    content: "";
+    inset: 0;
+    margin: auto;
+    background: url("../src/assets/images/emoji/pumkin.png") 0 0/40px 80px no-repeat;
+    border: 1px solid #fff;
+    filter: drop-shadow(0 0px 12px rgba(0, 0, 0, .377));
+    transform: rotate(20deg);
+    transition: transform .3s
+}
+
+.pin,
+.poppy::after {
+    filter: drop-shadow(0 2px 1px rgba(0, 0, 0, .377))
+}
+
+.avatar-pendant,
+.bubble-trigger .position,
+.bubble::after,
+.bubble::before {
+    transform: translate(-50%, -50%)
+}
+
+.avatar-box:active .hairclip::before,
+.avatar-box:hover .hairclip::before,
+.bubble-trigger.active .hairclip::before {
+    background-position: 0 -40px;
+    transform: rotate(-20deg)
+}
+
+#dot-box {
+    border-radius: 50%;
+    bottom: 14px;
+    right: 14px
+}
+
+#status {
+    flex-direction: row;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-radius: 30px;
+    padding: 5px;
+    transition: width .5s ease-in-out
+}
+
+#dot,
+#ping,
+.bubble::after,
+.bubble::before {
+    border-radius: 50%;
+    position: absolute
+}
+
+#status .empty {
+    width: 25px;
+    height: 20px
+}
+
+#status p {
+    font-size: .8em;
+    white-space: nowrap;
+    text-align: center
+}
+
+.avatar-box:hover #status {
+    width: max-content;
+    min-width: fit-content
+}
+
+.avatar-box:hover #status p,
+.bubble-trigger.active .position {
+    visibility: visible
+}
+
+#ping {
+    margin: auto;
+    animation: 1s cubic-bezier(0, 0, .2, 1) infinite ping
+}
+
+@keyframes ping {
+
+    75%,
+    to {
+        transform: scale(2);
+        opacity: 0
+    }
+}
+
+#dot {
+    margin: auto;
+    background-color: gray
+}
+
+.avatar-pendant {
+    /* width: 323px;
+    height: 323px; */
+    width: 223px;
+    height: 223px;
+    top: 50%;
+    left: 50%
+}
+
+.bubble-trigger {
+    cursor: pointer
+}
+
+.bubble-trigger .position {
+    visibility: hidden;
+    position: absolute;
+    height: 0;
+    width: 0;
+    top: 78px;
+    left: 122%;
+    display: flex;
+    justify-content: flex-start
+}
+
+.bubble::after,
+.bubble::before,
+.status-bubble,
+.widget>p {
+    background-color: #fff;
+    z-index: 1;
+}
+
+.bubble::after {
+    top: -1px;
+    left: 21px;
+    width: 20px;
+    height: 20px
+}
+
+.bubble::before {
+    top: -16px;
+    left: 5px;
+    width: 10px;
+    height: 10px
+}
+
+.status-bubble {
+    position: absolute;
+    max-width: 254px;
+    width: max-content;
+    height: fit-content;
+    border: 10px solid #fff;
+    border-radius: 12px;
+    word-wrap: break-word;
+    font-size: .9em;
+    color: var(--text-color);
+    box-shadow: rgba(0, 0, 0, .1) 0 1px 2px 0
+}
+
+.status-bubble img {
+    object-fit: contain;
+    float: left;
+    shape-outside: url(../src/assets/images/emoji/1214893524575846410.webp);
+    shape-margin: 3px
+}
+
+.emoji {
+    display: none;
+    width: 32px;
+    height: 32px;
+    object-fit: contain
+}
+
+.status-bubble .status-content {
+    width: 100%;
+    height: fit-content
+}
+
+.status-bubble::after {
+    display: none;
+    content: "~Hanabi~";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: fit-content;
+    height: fit-content;
+    color: #fff;
+    font-weight: 700;
+    background-color: #d51740;
+    border-radius: 10px;
+    padding: 0 5px
+}
+
+.pin {
+    height: 30px !important;
+    width: 30px !important;
+    font-family: serif;
+    font-size: 30px
+}
+
+#mail meta *,
+.follow,
+.name,
+.username,
+footer p {
+    width: fit-content
+}
+
+footer p {
+    height: fit-content;
+}
+
+.footer-tile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.banana-cat-huhu {
+    width: 64px;
+    height: 64px;
+    transform: scaleX(-1);
+    background: var(--image) center/cover no-repeat;
+}
+
+.icon-1 {
+    position: absolute;
+    top: -25px;
+    right: -25px;
+    background: url("../src/assets/images/emoji/Invicon_Cake.png") center/cover no-repeat;
+    transform: rotate(30deg)
+}
+
+.icon-2 {
+    position: absolute;
+    bottom: -25px;
+    left: -30px;
+    background: url("../src/assets/images/emoji/BlockSprite_tnt.png") center/cover no-repeat;
+    transform: rotate(-25deg)
+}
+
+.username {
+    margin: 30px 0 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: fit-content
+}
+
+.carousel-item,
+.icon {
+    justify-content: center
+}
+
+.name {
+    font-size: 2em;
+    margin: 0
+}
+
+.cookie,
+.poppy {
+    width: 40px;
+    height: 40px;
+    position: relative
+}
+
+.poppy {
+    display: inline-block;
+    margin-left: 4px
+}
+
+.poppy::after {
+    inset: 0;
+    margin: auto;
+    content: "";
+    position: absolute;
+    background: url("../src/assets/images/emoji/poppy.png") center/cover no-repeat;
+    width: 36px;
+    height: 36px;
+    animation: 5s infinite wobble
+}
+
+.cookie::before,
+.mctooltip .tooltip {
+    filter: drop-shadow(2px 2px 1px rgba(0, 0, 0, .377))
+}
+
+.link {
+    text-decoration: none;
+    color: #fcf5c2;
+    font-weight: bold;
+
+}
+
+@keyframes wobble {
+
+    0%,
+    100% {
+        transform: rotate(0)
+    }
+
+    25% {
+        transform: rotate(15deg)
+    }
+
+    50% {
+        transform: rotate(-15deg)
+    }
+
+    75% {
+        transform: rotate(10deg)
+    }
+}
+
+.mememe .line {
+    margin: 16px 0 !important;
+}
+
+.cookie {
+    display: inline;
+    z-index: 7;
+    margin-left: 5px
+}
+
+#img3,
+.hidden {
+    display: none
+}
+
+.bento,
+.wrapper {
+    width: fit-content;
+    height: fit-content
+}
+
+.carousel-item img,
+.widget-display img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+}
+
+.cookie::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 32px;
+    height: 32px;
+    background: url("../src/assets/images/emoji/cookie.png") center/cover no-repeat;
+    object-fit: cover;
+    transition: background .5s ease-in-out;
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: rotate(0)
+    }
+
+    25%,
+    75% {
+        transform: rotate(-5deg)
+    }
+
+    50% {
+        transform: rotate(5deg)
+    }
+}
+
+.cookie.shake::before {
+    content: "";
+    animation: .5s ease-in-out 4 shake
+}
+
+#activity,
+#color-dot {
+    display: inline-block
+}
+
+.about-me>p {
+    font-size: 1.2em
+}
+
+.mememe * {
+    text-shadow: 0 0 1.5px rgba(0, 0, 0, .6)
+}
+
+.wrapper {
+    z-index: 0;
+    min-height: fit-content
+}
+
+.bento {
+    display: grid;
+    grid-template-columns: repeat(4, 175px);
+    grid-template-rows: repeat(var(--repeat), 175px) 67.5px;
+    grid-template-areas: "c c c c" "c c c c" "d d h1 h1" "s1 s2 h1 h1" "h2 h2 s3 s4" "h2 h2 s5 s6" "s7 s8 m m" "f f f f";
+    gap: 40px;
+    font-family: "Playpen Sans", cursive
+}
+
+.winget-clock {
+    grid-area: c;
+    background-image: url("../src/assets/images/backgrounds/0d4903f5eb8ddcc3bbca239fdc76e625.gif");
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    text-align: center;
+    color: #fff
+}
+
+.vignette {
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(to top, rgba(0, 0, 0, .7), rgba(0, 0, 0, 0));
+    opacity: .5
+}
+
+.widget-display:active p,
+.widget-display:hover p,
+.widget-social:hover .follow,
+.winget-clock:active p,
+.winget-clock:hover p {
+    opacity: 1
+}
+
+.clock-container,
+.date,
+.day {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.clock-container {
+    top: 34%;
+    max-width: fit-content;
+    max-height: fit-content;
+    text-align: center;
+    color: #fff
+}
+
+.clock-container span {
+    filter: drop-shadow(0 0 6px rgba(0, 0, 0, .6))
+}
+
+.time {
+    opacity: .7;
+    font-size: 10em;
+    font-family: "Poetsen One", sans-serif
+}
+
+.day {
+    bottom: -156px;
+    font-size: 8em;
+    font-style: italic;
+    font-family: "Great Vibes", cursive
+}
+
+.date {
+    bottom: -136px;
+    font-size: 3.5em;
+    font-family: "Passion One", sans-serif;
+    font-style: normal
+}
+
+.widget {
+    padding: 24px;
+    background-color: hwb(0 100% 0% / .314);
+    border-radius: 20px;
+    outline: rgba(128, 128, 128, .16) solid 1px;
+    backdrop-filter: blur(20px);
+    transition: background-color .2s ease-in-out, transform .2s ease-in-out
+}
+
+.widget:active {
+    transform: scale(.95)
+}
+
+.widget:hover {
+    background-color: hwb(0 68% 32% / .063)
+}
+
+.widget-display {
+    position: relative;
+    padding: 0 !important;
+    cursor: not-allowed
+}
+
+.widget-display img {
+    transition: filter .2s ease-in-out;
+    image-rendering: smooth;
+    image-rendering: crisp-edges
+}
+
+.carousel {
+    position: relative;
+    width: 390px;
+    height: 390px !important;
+    grid-area: h1
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform .5s ease-in-out
+}
+
+.carousel-item {
+    min-width: 100%;
+    height: 390px !important;
+    display: flex;
+    align-items: center
+}
+
+.carousel-item img {
+    image-rendering: smooth;
+    display: block;
+    margin: auto
+}
+
+.carousel-control {
+    position: absolute;
+    height: 56px !important;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: .5rem;
+    border-radius: 50%;
+    opacity: .4;
+    transition: opacity .2s ease-in-out
+}
+
+.follow,
+.widget>p {
+    opacity: 0;
+    transition: opacity .2s ease-in-out
+}
+
+.carousel-control:hover {
+    opacity: .8
+}
+
+.carousel .carousel-control svg {
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, .5))
+}
+
+.prev {
+    left: 10px
+}
+
+.next {
+    right: 10px
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px
+}
+
+#discord-rpc,
+#mail,
+#small_image,
+.widget-social {
+    position: relative
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(141, 141, 141, .314);
+    border-radius: 50%;
+    cursor: pointer
+}
+
+.indicator.active {
+    background-color: rgba(92, 92, 92, .637)
+}
+
+#img1 {
+    grid-area: h1;
+}
+
+#img2 {
+    grid-area: h2
+}
+
+.widget>p {
+    color: var(--text-color);
+    border-radius: 15px;
+    padding: 8px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 16px;
+    font-size: .89em;
+    outline: rgba(128, 128, 128, .322) solid 1px
+}
+
+#discord .rpc .meta,
+.meta p {
+    color: var(--sub-text-color)
+}
+
+#discord .meta,
+.meta b {
+    font-size: .9em;
+    white-space: nowrap
+}
+
+.widget-social {
+    grid-area: auto;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: var(--text-color)
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, .2) 0 0 2px 0
+}
+
+#scroll-to-bento {
+    visibility: hidden;
+    border: none;
+    cursor: pointer
+}
+
+.tooltip {
+    border-radius: 5px
+}
+
+.icon,
+.icon img {
+    width: 40px;
+    height: 40px
+}
+
+img[src^="./src/assets/images/social/"] {
+    width: 30px !important;
+    height: 30px !important
+}
+
+img[src^="./src/assets/images/social/instagram.svg"] {
+    width: 40px !important;
+    height: 40px !important
+}
+
+#back-to-top img,
+#discord,
+footer .footer-box {
+    width: 100%;
+    height: 100%
+}
+
+.meta {
+    margin-top: 8px;
+    overflow-x: hidden
+}
+
+.meta p {
+    font-size: .8em;
+    padding: 0
+}
+
+.follow {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    padding: 7px 14px;
+    color: #fff;
+    font-size: .7em;
+    height: fit-content
+}
+
+footer {
+    grid-area: f;
+    padding: 20px 24px !important
+}
+
+footer .footer-box {
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+#scroll-to-bento {
+    z-index: 1000;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    width: 100vw;
+    height: fit-content;
+    transform: translateX(-50%);
+    background-color: transparent;
+    padding: 10px;
+    filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, .5));
+    transition: box-shadow .3s, opacity .3s
+}
+
+#back-to-top,
+.tooltip {
+    z-index: 1000;
+    padding: 5px;
+    position: fixed
+}
+
+#scroll-to-bento svg {
+    width: 50px;
+    color: #fff
+}
+
+#back-to-top {
+    position: fixed;
+    bottom: -200px;
+    right: 0;
+    width: 100px;
+    min-height: 200px;
+    border: none;
+    background: none;
+    z-index: 1000;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: transform 0.2s ease-in-out;
+    background: url("../src/nishikigi_chisato_lycoris_reco.png") center/cover no-repeat;
+    /* image-rendering: pixelated; */
+    image-rendering: inherit;
+    padding: 0;
+    transition: 0.5s;
+    filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));
+}
+
+#discord-rpc {
+    grid-area: d
+}
+
+#discord-rpc #free {
+    width: max-content;
+    height: fit-content;
+    position: absolute;
+    transform: translate(50%, 50%);
+    bottom: 36%;
+    right: 50%;
+    color: #000b
+}
+
+#discord {
+    flex-direction: column
+}
+
+#color-dot {
+    flex-shrink: 0 !important;
+    margin-right: .1em;
+    border-radius: 50%;
+    width: .6em;
+    height: .6em
+}
+
+#discord .content {
+    flex-direction: row
+}
+
+#activity {
+    vertical-align: bottom;
+    max-width: 200px
+}
+
+#discord .meta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 0;
+    margin-left: 14px;
+    height: fit-content
+}
+
+#discord .rpc .meta * {
+    white-space: nowrap;
+    max-width: 244px
+}
+
+#discord .rpc {
+    flex-direction: row;
+    margin-top: 10px
+}
+
+#discord .rpc>div {
+    height: 72px
+}
+
+#large_image {
+    border-radius: 10px;
+    width: 72px;
+    height: 72px !important
+}
+
+#small_image {
+    top: -22px;
+    left: 50px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px !important
+}
+
+.rpc .meta div {
+    width: 280px
+}
+
+#mail {
+    grid-area: m
+}
+
+#mail #img-ikaros {
+    position: absolute;
+    height: 127px;
+    width: 177px;
+    top: 24px;
+    right: 24px;
+    bottom: 24px;
+    object-fit: cover;
+    border-radius: 10px;
+    outline: rgba(104, 104, 104, .411) solid 1px
+}
+
+.mctooltip {
+    font-family: "Minecraft Rus"
+}
+
+.tooltip {
+    transition: opacity .2s
+}
+
+.mctooltip img {
+    -ms-interpolation-mode: nearest-neighbor;
+    image-rendering: pixelated
+}
+
+.mctooltip .tooltip {
+    font-size: medium;
+    padding: .31em;
+    border: 7px solid transparent;
+    border-radius: 13px;
+    border-image: url(../src/assets/images/emoji/tooltip-border.png) 30% repeat;
+    color: #fcfcfc;
+    background-color: #1e0f1e;
+    position: absolute;
+    z-index: 999;
+    display: none;
+    opacity: .935;
+    text-shadow: .11em .11em #303030;
+    word-spacing: 0.2em;
+    line-height: 1.4em;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: -moz-none;
+    -o-user-select: none;
+    user-select: none
+}
+
+.mctooltip div span {
+    vertical-align: top
+}
+
+.back-to-top {
+    position: fixed;
+    z-index: 999;
+    right: -108px;
+    bottom: 0;
+    width: 108px;
+    height: 150px;
+    background: url(../src/back-to-top.webp) 0 0/108px 450px no-repeat;
+    opacity: .6;
+    transition: opacity .3s, right .8s;
+    cursor: pointer;
+    user-select: none
+}
+
+.back-to-top.load {
+    right: 0
+}
+
+.back-to-top::after {
+    content: "";
+    position: absolute;
+    width: 108px;
+    height: 150px;
+    background: url(../src/back-to-top.webp) 0 -300px/108px 450px no-repeat;
+    opacity: 0;
+    transition: opacity .3s
+}
+
+.back-to-top:hover {
+    background-position: 0 -150px;
+    opacity: 1
+}
+
+.back-to-top.ani-leave {
+    background-position: 0 -300px;
+    animation: 390ms ease-in-out forwards ani-leave
+}
+
+.back-to-top.leaved {
+    background: 0 0;
+    transition: none
+}
+
+@keyframes ani-leave {
+    0% {
+        right: 0
+    }
+
+    100% {
+        right: -108px
+    }
+}
+
+@media (width <1260px) {
+    #spriteXingHui {
+        display: none;
+    }
+
+    .container {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        height: fit-content
+    }
+
+    header {
+        min-width: 820px;
+        max-width: 820px;
+        width: 820px;
+        min-height: 100vh
+    }
+
+    .about-me {
+        width: max-content;
+        max-width: 100%;
+        margin: 0 0 10px;
+        padding: 0 16px
+    }
+
+    .wrapper {
+        padding-top: 20px
+    }
+
+    #scroll-to-bento {
+        visibility: visible
+    }
+
+
+    header a path {
+        box-shadow: rgba(0, 0, 0, .2) 0 0 2px 0
+    }
+}
+
+@media (width <820px) {}
+
+@media (width <900px) {
+
+    #dot-box,
+    #status {
+        height: 20px;
+        width: 20px
+    }
+
+    .bubble-trigger.active #status p,
+    .widget>p {
+        visibility: hidden
+    }
+
+    .follow,
+    .widget>p {
+        opacity: 1
+    }
+
+    .container {
+        padding: 48px 24px
+    }
+
+    header {
+        min-width: 380px;
+        max-width: 380px;
+        width: 380px;
+        height: 100vh
+    }
+
+    .about-me {
+        margin-bottom: 32px;
+        padding: 0 16px
+    }
+
+    .avatar-box {
+        width: 120px;
+        height: 120px
+    }
+
+    .avatar {
+        width: 100%;
+        height: 100%
+    }
+
+    .hairclip,
+    .hairclip::before,
+    .poppy::after {
+        width: 30px;
+        height: 30px
+    }
+
+    .hairclip {
+        top: 10;
+        left: -5px
+    }
+
+    .hairclip::before {
+        background-size: 30px 60px
+    }
+
+    .avatar-box:active .hairclip::before,
+    .avatar-box:hover .hairclip::before,
+    .bubble-trigger.active .hairclip::before {
+        background-position: 0 -30px;
+        transform: rotate(-20deg)
+    }
+
+    .status-bubble {
+        max-width: 210px;
+        width: max-content;
+        max-height: fit-content;
+        white-space: normal
+    }
+
+    .avatar-pendant {
+        /* width: 210px;
+        height: 210px */
+        width: 140px;
+        height: 140px
+    }
+
+    #dot-box {
+        border-radius: 50%;
+        background-color: #fff;
+        position: absolute;
+        bottom: 14px;
+        right: 4px
+    }
+
+    #status {
+        border-radius: 30px;
+        padding: 5px;
+        width: max-content;
+        min-width: fit-content
+    }
+
+    #status p {
+        font-size: .5em;
+        visibility: visible
+    }
+
+    #status .empty {
+        width: 15px;
+        height: 10px
+    }
+
+    .bubble-trigger.active #status {
+        width: 20px;
+        min-width: initial
+    }
+
+    #dot,
+    #ping {
+        width: 13px;
+        height: 13px
+    }
+
+    .name {
+        font-size: 1.6em
+    }
+
+    .poppy {
+        width: 30px !important;
+        height: 30px !important
+    }
+
+    .about-me>p {
+        font-size: 1em
+    }
+
+    .bento {
+        column-gap: 24px;
+        row-gap: 24px;
+        grid-template-columns: repeat(2, 178px);
+        grid-template-rows: repeat(8, 178px);
+        grid-template-areas: "c c "
+            "d d"
+            "s1 s2"
+            "s3 s4"
+            "h1 h2"
+            "s5 s6"
+            "s7 s8"
+            "m m"
+            "f f";
+    }
+
+    .clock-container {
+        position: absolute;
+        top: 5px;
+        left: 50%;
+        transform: translateX(-50%);
+        min-width: fit-content;
+        min-height: fit-content;
+        text-align: center;
+        color: #fff;
+        pointer-events: none
+    }
+
+    .time {
+        font-size: 80px
+    }
+
+    .day {
+        bottom: -86px;
+        left: 50%;
+        font-size: 67px
+    }
+
+    .date {
+        bottom: -75px;
+        left: 50%;
+        font-size: 30px
+    }
+
+    .carousel,
+    .carousel-item {
+        height: 380px !important;
+        width: 380px !important
+    }
+
+    #mail #img-ikaros {
+        height: 130px;
+        width: 150px;
+        top: 24px;
+        right: 24px
+    }
+
+    .tooltip {
+        position: fixed;
+        z-index: 1000;
+        padding: 5px;
+        border-radius: 5px;
+        transition: opacity .2s
+    }
+
+    .mctooltip img {
+        -ms-interpolation-mode: nearest-neighbor;
+        image-rendering: pixelated
+    }
+
+    .mctooltip .tooltip {
+        font-size: .9em;
+        padding: .31em;
+        border: 7px solid transparent;
+        border-radius: 13px;
+        border-image: url(../src/assets/images/emoji/tooltip-border.png) 30% repeat;
+        opacity: .935;
+        pointer-events: none;
+        text-shadow: .11em .11em #303030;
+        word-spacing: 0.2em;
+        line-height: 1.4em
+    }
+
+    .footer-tile {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+}
