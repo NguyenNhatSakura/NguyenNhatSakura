@@ -210,7 +210,7 @@ body::before {
     margin: -15px;
     z-index: -1;
     background-color: #fff;
-    background-image: url("https://github.com/NguyenNhatSakura/NguyenNhatSakura/blob/main/src/assets/images/backgrounds/bg_low.gif?raw=true");
+    background-image: url("//github.com/NguyenNhatSakura/NguyenNhatSakura/blob/main/src/assets/images/backgrounds/bg_low.gif");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
