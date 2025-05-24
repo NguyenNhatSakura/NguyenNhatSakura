@@ -13,6 +13,7 @@
     <meta name="author" content="Nguyễn Minh Nhật" />
     <link rel="preconnect" href="https://fonts.googleapis.com/" />
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playpen+Sans&amp;family=Great+Vibes&amp;family=Passion+One&amp;family=Poetsen+One&amp;display=swap" as="style" onload="this.rel='stylesheet'" />
     <noscript>
       <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans&amp;family=Great+Vibes&amp;family=Passion+One&amp;family=Poetsen+One&amp;display=swap" rel="stylesheet" />
@@ -20,9 +21,10 @@
     <link rel="canonical" href="https://nguyennhatsakura.github.io/" />
     <link rel="icon" href="src/favicon.ico" />
     <link rel="stylesheet" href="css/style.css" />
-    <script async src="/scripts/fuckdevtools.js" />
-    <script async src="/scripts/html-obf.js" />
-    <script async src="/scripts/fo-devtool.js" />
+    <script src="scripts/loading.js?v=1" defer></script>
+    <script async src="scripts/fuckdevtools.js"/>
+    <script async src="scripts/html-obf.js" />
+    <script async src="scripts/fo-devtool.js" />
         <script>
         // PROTECTION: Disable DevTools
         HtmlGuard.protections.antiDevTools();
@@ -49,7 +51,7 @@
 // Initialize the FuckDevtool class
 const Config = new FuckDevtool({
     interval: 200, // Check every 200 milliseconds
-    redirectURL: '//example.com', // Custom redirect URL
+    redirectURL: '//facebook.com/nguyennhat.dev.com', // Custom redirect URL
     debug: true, // Enable debug mode to log messages
     preventDevTools: true,  // Enable blocking of DevTools shortcuts
     checkBrowser: true,  // Enable browser checking
@@ -60,6 +62,10 @@ Config.init();
 </script>
     <title>Nguyễn Minh Nhật | Trang Cá Nhân</title>
   </head>
+  <style>
+	html,body{cursor:url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjac-SGqqBNOf8R-yQBGf8rXc_3Mko7Jk_Vf-3mtmVeE3EiU4oaRG-3lS1CqQ5XgWXpBspTaSriDXGF73L3m9V0c0K07iDq1r7XyLXpsEqU3VF2O6mT-gZkqsJimuxi8gLvOQtxhGXx8Y9a/s0/mouse-f1.png"), auto;}
+	a:hover{cursor:url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjITCvg05WrPmBtw3wfCNDButQe1JVWYCtbJ07WNQ1Q_72Sf0PTOXRzt9H8OqryPkJrC7GmiHUJ0CwHje_VLV2Trr9cumn0Y6eMcFL77Z9fm4G4I3ZwLHu8I8kDUy9rkXjzH_v49SscqVYT/s0/mouse-f2.png"), auto;}
+</style>
   <body oncontextmenu="return true;">
     <button id="scroll-to-bento" onclick="scrollToBento()" alt="stolen from autumn">
       <svg stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" fill="none" viewBox="0 0 512 512">
@@ -134,7 +140,7 @@ Config.init();
       </header>
       <div class="wrapper" id="wrapper">
         <div class="bento" id="bento">
-          <a href="#wrapper" class="widget winget-clock">
+          <a href="javascript:void(0);" class="widget winget-clock">
             <div class="vignette"></div>
             <div class="clock-container">
               <span id="time" class="time"></span>
@@ -154,7 +160,7 @@ Config.init();
           <!-- Carousel Indicators -->
           <!-- <div class="carousel-indicators" id="carousel-indicators"><span class="indicator active" onclick="currentSlide(1)"></span><span class="indicator" onclick="currentSlide(2)"></span><span class="indicator" onclick="currentSlide(3)"></span><span class="indicator" onclick="currentSlide(4)"></span><span class="indicator" onclick="currentSlide(5)"></span></div><p>Wakuri Kaoruko</p></div> -->
           <!-- Social Widgets -->
-          <a class="widget widget-social" href="https://www.youtube.com/@miyagawamizu" rel="noopener" target="_blank">
+          <a class="widget widget-social" href="https://www.youtube.com/@dauhuyummychannel" rel="noopener" target="_blank">
             <div class="meta-container">
               <div class="icon">
                 <img src="src/assets/images/icons/youtube.svg" alt="YouTube Icon" />
@@ -173,7 +179,7 @@ Config.init();
               </div>
               <div class="meta">
                 <b>TikTok</b>
-                <p>@bienranhabro>
+                <p>@bienranhabro</p>
               </div>
               <div style="background-color: #ea435a; border-radius: 5px" class="follow"> Follow </div>
             </div>
@@ -314,5 +320,6 @@ Config.init();
     <script defer src="scripts/lanyard.js"></script>
     <!-- <script defer src="./scripts/slide.js"></script> -->
     <div style="display: none" class="back-to-top"></div>
+    <div class="footwavewave swal-bath" style="animation: 20s linear 0s normal none infinite waves-r2l;"></div>
   </body>
 </html>

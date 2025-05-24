@@ -1492,3 +1492,59 @@ footer .footer-box {
         flex-direction: row-reverse;
     }
 }
+
+.swal-bath {
+    background: url(https://wusteam.com/public/src/vtd/img/main/wave.png) 0 0 repeat-x;
+    height: 3px;
+    width: 100%;
+    position: fixed;
+    background-size: 10px 3px;
+    z-index: 98;
+    bottom: 0px;
+    transition: bottom .35s;
+    -webkit-animation: waves-r2l 30s linear infinite;
+    -moz-animation: waves-r2l 30s linear infinite;
+    -ms-animation: waves-r2l 30s linear infinite;
+    -o-animation: waves-r2l 30s linear infinite;
+    animation: waves-r2l 30s linear infinite;
+}
+
+@-webkit-keyframes waves-r2l {
+    0% {
+        background-position: 0 0
+    }
+
+    100% {
+        background-position: -552px 0
+    }
+}
+
+@keyframes waves-r2l {
+    0% {
+        background-position: 0 0
+    }
+
+    100% {
+        background-position: -552px 0
+    }
+}
+
+@-webkit-keyframes waves-l2r {
+    0% {
+        background-position: 0 0
+    }
+
+    100% {
+        background-position: 552px 0
+    }
+}
+
+@keyframes waves-l2r {
+    0% {
+        background-position: 0 0
+    }
+
+    100% {
+        background-position: 552px 0
+    }
+}

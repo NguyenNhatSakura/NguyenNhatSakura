@@ -8,13 +8,13 @@
 		freeText: document.querySelector("#free"),
 	};
 	const statusColorMap = {
-		online: { color: "#23a55a", text: "Online", glow: "0 0 5px 2px #23a55a" },
+		online: { color: "#23a55a", text: "Trực tuyến", glow: "0 0 5px 2px #23a55a" },
 		dnd: {
 			color: "#f23f43",
-			text: "Do Not Disturb",
+			text: "Không làm phiền",
 			glow: "0 0 5px 2px #f23f43",
 		},
-		idle: { color: "#f0b232", text: "Idle / AFK", glow: "0 0 5px 2px #f0b232" },
+		idle: { color: "#f0b232", text: "Nhàn rỗi / AFK", glow: "0 0 5px 2px #f0b232" },
 		offline: { color: "#7e828c", text: "Offline", glow: "none" },
 		streaming: {
 			color: "#593695",
@@ -27,7 +27,7 @@
 	function updateStatus(status) {
 		let { color, text, glow } = statusColorMap[status.discord_status] || {
 			color: "#7e828c",
-			text: "Unknown",
+			text: "Không xác định",
 			glow: "none",
 		};
 		if (
