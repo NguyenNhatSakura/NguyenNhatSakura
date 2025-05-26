@@ -23,6 +23,6 @@ if (disable_right_click == true){
     
     document.oncontextmenu = function() {
         event.preventDefault();
-        alert("Devtools?");
+        FuiToast.error("Devtools?")
     }
 }
