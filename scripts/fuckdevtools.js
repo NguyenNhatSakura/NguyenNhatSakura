@@ -1,28 +1,45 @@
-// The CONFIG:
-var disable_right_click = /* If this was true, the user cannot right click and if they do, they see alert DevTools? */ true;
-var disable_f12 = /* If this was true, users cannot do f12 */ true;
-var disable_csi = /* if this was true, users cannot do control shift i */ true;
-document.onkeydown = function(event) {
-    if (disable_f12 == true){
-        if (event.keyCode == 123) {
-            event.preventDefault();
-            location.replace("about:blank");
+// fuckdevtool.js
+toast.config({ position: 'top-center' });
 
-        }
+(function() {
+    const disable_right_click = true;
+    const disable_f12 = true;
+    const disable_csi = true;
+    const disable_cs_j = true;
+    const disable_ctrl_u = true;
+
+    // Right-click block
+    if (disable_right_click) {
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            FuiToast.error("DevTools?");
+        });
     }
-    // if the user pressed the Control + Shift + I key
-    if (disable_csi == true){
-        
-        if (event.ctrlKey && event.shiftKey && event.keyCode == 73) {
-            event.preventDefault();
+
+    // Key blocks
+    document.addEventListener('keydown', function(e) {
+        // F12
+        if (disable_f12 && e.key === "F12") {
+            e.preventDefault();
             location.replace("about:blank");
         }
-    }
-}
-if (disable_right_click == true){
-    
-    document.oncontextmenu = function() {
-        event.preventDefault();
-        FuiToast.error("Devtools?")
-    }
-}
+
+        // Ctrl+Shift+I
+        if (disable_csi && e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "i")) {
+            e.preventDefault();
+            location.replace("about:blank");
+        }
+
+        // Ctrl+Shift+J
+        if (disable_cs_j && e.ctrlKey && e.shiftKey && (e.key === "J" || e.key === "j")) {
+            e.preventDefault();
+            location.replace("about:blank");
+        }
+
+        // Ctrl+U
+        if (disable_ctrl_u && e.ctrlKey && (e.key === "U" || e.key === "u")) {
+            e.preventDefault();
+            FuiToast.error("View source? Nope.");
+        }
+    });
+})();
