@@ -1,6 +1,3 @@
-// Cấu hình Toast
-toast.config({ position: 'top-center' });
-
 // Thiết lập chặn các hành vi DevTools
 const disable_right_click = true;
 const disable_f12 = true;
