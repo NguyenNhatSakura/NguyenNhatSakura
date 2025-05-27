@@ -1,0 +1,33 @@
+body {
+  font-family: sans-serif;
+  background: #f4f4f4;
+  padding: 20px;
+}
+h2 {
+  color: #333;
+}
+.form-group {
+  margin-bottom: 20px;
+}
+input[type="text"] {
+  width: 60%;
+  padding: 8px;
+  margin-right: 10px;
+}
+button {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background: #fff;
+}
+th, td {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+}
+input.proxy-edit {
+  width: 90%;
+  padding: 6px;
+}
