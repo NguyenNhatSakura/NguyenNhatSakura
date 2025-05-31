@@ -21,39 +21,31 @@
     <link rel="canonical" href="https://nguyennhatsakura.github.io/" />
     <link rel="icon" href="src/favicon.ico" />
     <link rel="stylesheet" href="css/style.css" />
-    <script src="scripts/loading.js?v=1" defer></script>
-    <script async src="scripts/html-obf.js" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <link rel="stylesheet" href="css/fuiToast.min.css"/>
     <script src="scripts/fuckdevtools.js"></script>
-    <script async src="scripts/fo-devtool.js" />
-        <script>
-        // PROTECTION: Disable DevTools
-        HtmlGuard.protections.antiDevTools();
-
-        // PROTECTION: Disable context menu
-        HtmlGuard.protections.blockContextMenu();
-
-        // PROTECTION: Disable drag
-        HtmlGuard.protections.blockDrag();
-
-        // PROTECTION: Disable selection
-        HtmlGuard.protections.blockSelection();
-
-        // PROTECTION: Disable console output
-        HtmlGuard.protections.blockConsoleOutput();
-
-        // ADDING: Add link to 'style.css'
-        HtmlGuard.loader.loadStyleByRef("/css/styles.css");
-
-        // ADDING: Run 'test.js' script
-        HtmlGuard.loader.loadScriptBySrc("/script/script.js");
-    </script>
     <title>Nguyễn Minh Nhật | Trang Cá Nhân</title>
   </head>
   <style>
-	html,body{cursor:url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjac-SGqqBNOf8R-yQBGf8rXc_3Mko7Jk_Vf-3mtmVeE3EiU4oaRG-3lS1CqQ5XgWXpBspTaSriDXGF73L3m9V0c0K07iDq1r7XyLXpsEqU3VF2O6mT-gZkqsJimuxi8gLvOQtxhGXx8Y9a/s0/mouse-f1.png"), auto;}
-	a:hover{cursor:url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjITCvg05WrPmBtw3wfCNDButQe1JVWYCtbJ07WNQ1Q_72Sf0PTOXRzt9H8OqryPkJrC7GmiHUJ0CwHje_VLV2Trr9cumn0Y6eMcFL77Z9fm4G4I3ZwLHu8I8kDUy9rkXjzH_v49SscqVYT/s0/mouse-f2.png"), auto;}
+    html, body {
+        cursor: url("images/cursor/default.cur"), default;
+        user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+    }
+    a:hover,
+    button:hover,
+    select:hover {
+        cursor: url("images/cursor/link.cur"), pointer;
+    }
+    input,
+    textarea {
+        cursor: url("images/cursor/Text-Select.cur"), text !important;
+        user-select: text;
+        -webkit-user-select: text;
+        -moz-user-select: text;
+        -ms-user-select: text;
+    }
 </style>
   <body oncontextmenu="return true;">
     <button id="scroll-to-bento" onclick="scrollToBento()" alt="stolen from autumn">
@@ -308,11 +300,13 @@
     <!-- <script defer src="./scripts/top.js"></script> -->
     <script defer src="scripts/lanyard.js"></script>
     <!-- <script defer src="./scripts/slide.js"></script> -->
+    <script src="scripts/fuiToast.min.js"/>
     <div style="display: none" class="back-to-top"></div>
     <div class="animeTWD">
       <div class="animeBlurTWD">
       </div>
     </div>
-    <div class="footwavewave swal-bath" style="animation: 20s linear 0s normal none infinite waves-r2l;"></div>
+    <div id="fui-toast"></div>
+    <div class="footwavewave swal-bath" style="animation: 20s linear 0s normal none infinite waves-r2l;"></div>\
   </body>
 </html>

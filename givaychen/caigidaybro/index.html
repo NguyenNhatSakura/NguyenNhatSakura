@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cái Gì Daaa?</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="fuiToast.min.css">
+</head>
+<body>
+  <div id="fui-toast"></div>
+  <audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mp3" />
+  </audio>
+  <div id="intro">
+    <button id="startBtn">
+      Anh có điều muốn nói<br>Nhấn vào đây đi
+    </button>
+  </div>
+  <div id="mainContent" style="display: none;">
+    <div id="line" class="line"></div>
+    <div id="final" class="final">
+      <p>Cuối cùng...<br />Cậu đồng ý làm người yêu tớ nhaaa!!! 💖</p>
+      <div class="button-group">
+        <button id="btnYes">Đồng ý</button>
+        <button id="btnNo">Không</button>
+      </div>
+    </div>
+    <div id="msgYes" class="yesContent">
+      <h1>Cảm ơn cậu đã đồng ý!</h1>
+      <div class="gif_container">
+        <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmo3c3l5ODh3ZGN6NHhhaDE2Mjg1ZjkwOXczdTFxbWM3dTBtaW9zaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/9XY4f3FgFTT4QlaYqa/giphy.gif" />
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+  <script src="jquery-3.7.1.min.js"></script>
+  <script src="fuiToast.min.js"></script>
+</body>
+</html>
