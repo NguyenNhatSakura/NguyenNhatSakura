@@ -1621,124 +1621,128 @@ footer .footer-box {
 }
 
 .mobile {
-    display: none;
+  display: none;
 }
 
 .pc {
-    display: block;
+  display: block;
 }
 
 #toast-prompt {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 380px;
-    max-width: 90%;
-    padding: 16px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    z-index: 9999;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 380px;
+  max-width: 90%;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  z-index: 9999;
 
-    background: rgba(53, 53, 53, 0.5);
-    color: #fff;
-    border-radius: 20px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(12px) saturate(180%);
-    -webkit-backdrop-filter: blur(12px) saturate(180%);
-    font-size: 15px;
-    line-height: 1.5;
-    flex-wrap: wrap;
-    animation: toastFadeIn 0.5s ease forwards;
+  background: rgba(53, 53, 53, 0.5);
+  color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  font-size: 15px;
+  line-height: 1.5;
+  flex-wrap: wrap;
+  animation: toastFadeIn 0.5s ease forwards;
 }
 
 @keyframes toastFadeIn {
-    from {
-        opacity: 0;
-        transform: translate(-50%, 20px);
-    }
-    to {
-        opacity: 1;
-        transform: translate(-50%, 0);
-    }
+  from {
+    opacity: 0;
+    transform: translate(-50%, 20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
 }
 
 #toast-prompt img {
-    width: 32px;
-    height: 32px;
-    margin-right: 10px;
-    border-radius: 50%;
-    object-fit: cover;
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 #toast-prompt button {
-    border: none;
-    cursor: pointer;
-    font-weight: 500;
-    font-family: inherit;
-    border-radius: 50px;
-    padding: 8px 20px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    margin-left: auto;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  font-family: inherit;
+  border-radius: 50px;
+  padding: 8px 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin-left: auto;
 }
 
 .confirm-btn {
-    background: linear-gradient(135deg, #3f51b5, #5c6bc0);
-    color: #fff;
+  background: linear-gradient(135deg, #3f51b5, #5c6bc0);
+  color: #fff;
 }
 
 .confirm-btn:hover {
-    background: linear-gradient(135deg, #3949ab, #7986cb);
-    transform: translateY(-2px);
+  background: linear-gradient(135deg, #3949ab, #7986cb);
+  transform: translateY(-2px);
 }
 
-/* Close Button */
 .close-btn {
-    background: transparent;
-    color: #b1b8c6;
-    text-decoration: underline;
-    padding: 8px 12px;
-    box-shadow: none;
-    margin-left: 20px;
+  background: transparent;
+  color: #b1b8c6;
+  text-decoration: underline;
+  padding: 8px 12px;
+  box-shadow: none;
+  margin-left: 20px;
 }
 
 .close-btn:hover {
-    color: #ffffff;
-    background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 @media (max-width: 768px) {
-    .mobile {
-        display: block;
-    }
+  .mobile {
+    display: block;
+  }
 
-    .pc {
-        display: none;
-    }
+  .pc {
+    display: none;
+  }
 
-    #toast-prompt {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        width: 90% !important;
-        left: 5% !important;
-        padding: 20px !important;
-        line-height: 24px !important;
-        background: #d1d1d1 !important;
-        color: #000 !important;
-    }
+  #toast-prompt {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 
-    #toast-prompt img {
-        margin: 0 0 12px 0 !important;
-    }
+    /* Căn giữa */
+    left: 50% !important;
+    transform: translateX(-50%) !important;
 
-    .confirm-btn,
-    .close-btn {
-        width: 100% !important;
-        margin: 6px 0 !important;
-        text-align: center !important;
-    }
+    width: 90% !important;
+    padding: 20px !important;
+    line-height: 24px !important;
+
+    background: #d1d1d1 !important;
+    color: #000 !important;
+  }
+
+  #toast-prompt img {
+    margin: 0 0 12px 0 !important;
+  }
+
+  .confirm-btn,
+  .close-btn {
+    width: 100% !important;
+    margin: 6px 0 !important;
+    text-align: center !important;
+  }
 }

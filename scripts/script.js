@@ -108,21 +108,7 @@ document.getElementById("eat").addEventListener("click", () => {
 });
 console.log("Desginer By: Nguyễn Minh Nhật", "color:#fff;background:linear-gradient(90deg,#448bff,#44e9ff);padding:5px 0;", "color:#000;background:linear-gradient(90deg,#44e9ff,#ffffff);padding:5px 10px 5px 0px;");
 const messages = [
-    "Đừng lo lắng em ơi, chuyện ngày mai đã có anh rồi",
-    "Em chỉ cần luôn nhớ và hướng trái tim về anh, oh oh",
-    "Dù giông bão ghé qua đây, thì sẽ có anh luôn đứng lại",
-    "Và dẹp hết ưu phiền xung quanh em",
-    "Để mang đến những điều tuyệt vời",
-    "Bờ vai anh đây, dựa vào đi nếu em đang buồn",
-    "Điều hạnh phúc nhất với anh giờ là được nhìn em cười",
-    "Và anh muốn thấy từng nỗi buồn của em vơi dần",
-    "Lại đây với anh đi em, mình xây hạnh phúc lâu dài",
-    "Ta sẽ nắm tay và đi hết cuộc đời này em ơi",
-    "Ta sẽ sẻ chia mọi buồn đau hay bao ngọt ngào",
-    "Hãy khoác lên mình chiếc váy cưới nhỏ xinh này em ơi",
-    "Lại đây với anh, mình cùng xây hạnh phúc lâu dài",
-    "Chung nhà rồi em ơi, giờ cuộc sống hai ta là một",
-    "Mọi buồn phiền lo lắng trước kia, để anh giữ dùm"
+    "Đừng lo lắng em ơi, chuyện ngày mai đã có anh rồi Em chỉ cần luôn nhớ và hướng trái tim về anh, oh oh Dù giông bão ghé qua đây, thì sẽ có anh luôn đứng lại Và dẹp hết ưu phiền xung quanh em Để mang đến những điều tuyệt vời Bờ vai anh đây, dựa vào đi nếu em đang buồn Điều hạnh phúc nhất với anh giờ là được nhìn em cười Và anh muốn thấy từng nỗi buồn của em vơi dần Lại đây với anh đi em, mình xây hạnh phúc lâu dài Ta sẽ nắm tay và đi hết cuộc đời này em ơi Ta sẽ sẻ chia mọi buồn đau hay bao ngọt ngào Hãy khoác lên mình chiếc váy cưới nhỏ xinh này em ơi Lại đây với anh, mình cùng xây hạnh phúc lâu dài Chung nhà rồi em ơi, giờ cuộc sống hai ta là một Mọi buồn phiền lo lắng trước kia, để anh giữ dùm"
 ];
 
 let index = 0;
