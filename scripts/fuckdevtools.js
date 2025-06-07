@@ -7,7 +7,7 @@ const disable_ctrl_u = true;
 document.addEventListener('contextmenu', function (e) {
     if (disable_right_click) {
         e.preventDefault();
-        FuiToast.error("DevTools?")
+        FuiToast.error("Đè Cái Gì? Chuột Phải Cái Gì? :))");
     }
 });
 
