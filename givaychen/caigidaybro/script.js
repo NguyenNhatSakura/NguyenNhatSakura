@@ -105,6 +105,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
   btnNo.addEventListener('mouseover', () => {
+    FuiToast.error("Thôi mà, bấm lại nút `Đồng ý` nhaaa~")
     const maxX = window.innerWidth - btnNo.offsetWidth;
     const maxY = window.innerHeight - btnNo.offsetHeight;
     btnNo.style.position = 'absolute';
