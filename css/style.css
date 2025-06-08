@@ -145,8 +145,8 @@ img {
 
 :root {
     --text-color-about-me: #ffffff;
-    --text-color: #000000;
-    --sub-text-color: #262626;
+    --text-color: #c2c2c2;
+    --sub-text-color: #ebebeb;
     --c-repat: 4;
     --bento-width-total: calc(var(--pixel) * var(--c-repat) + var(--gap-px) * (var(--c-repat) - 1));
     --repeat: 7;
@@ -210,7 +210,7 @@ body::before {
     margin: -15px;
     z-index: -1;
     background-color: #fff;
-    background-image: url("https://pouch.jumpshare.com/preview/udPydaKfTxC4eL6xyVKT3GD-0eQF290D24GRGnjDANjnDpD1sLPk8BCg4hNLXs-NcCJVNa_bSI2_vJvrtYczfjuRxHYUE1IokZijfXhr5Io");
+    background-image: url("../src/assets/images/backgrounds/bg_low.gif");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
