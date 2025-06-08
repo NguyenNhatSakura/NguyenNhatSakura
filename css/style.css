@@ -144,9 +144,9 @@ img {
 }
 
 :root {
-    --text-color-about-me: #ffffff;
-    --text-color: #c2c2c2;
-    --sub-text-color: #ebebeb;
+    --text-color-about-me: #3c3c3c;
+    --text-color: #202020;
+    --sub-text-color: #3e3e3e;
     --c-repat: 4;
     --bento-width-total: calc(var(--pixel) * var(--c-repat) + var(--gap-px) * (var(--c-repat) - 1));
     --repeat: 7;
