@@ -148,59 +148,67 @@ document.addEventListener("visibilitychange", function () {
 });
 
  $(function() {
-        $(window).scroll(function() {
-                var scroHei = $(window).scrollTop();
-                if (scroHei > 500) {
-                   $('.back-to-top').css('top','-200px');
+    function getCookie(name) {
+        let match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+        return match ? match[2] : null;
+    }
 
-                } else {                                                
-                    $('.back-to-top').css('top','-999px');
-                }
-            })
-        $('.back-to-top').click(function() {
-            $('body,html').animate({
-                scrollTop: 0
-            }, 600);
-        })
-    })
-$("body").on("click", ".close-btn", function() {
-        $("#toast-prompt").slideUp("fast", function() {
-            let n = new Date(Date.now() + 6e5).toUTCString();
-            document.cookie = `toast=close; expires=${n}; path=/`
-        }),
-        FuiToast.success("Kh\xf4ng hiển thị lại trong 10 ph\xfat.")
-    }),
-    $("body").on("click", ".confirm-btn", function() {
-        !function n() {
-            fetch("https://api.thanhdieu.com/rand-music.php").then(n => n.json()).then(t => {
-                let e = t.musicUrl
-                  , i = new Audio(e)
-                  , h = new Promise( (e, h) => {
-                    i.play().then( () => {
-                        e(t)
-                    }
-                    ).catch(n => {
-                        h("Kh\xf4ng thể ph\xe1t nhạc ngay l\xfac n\xe0y.")
-                    }
-                    ),
-                    i.addEventListener("ended", function() {
-                        e("Đ\xe3 chuyển sang b\xe0i h\xe1t mới."),
-                        n()
-                    })
-                }
-                );
-                FuiToast.promise(h, {
-                    loading: "Đang chờ ph\xe1t nhạc...",
-                    success: n => n.titleTracks,
-                    error: "C\xf3 lỗi khi ph\xe1t nhạc!"
-                }, {
-                    isClose: !0
-                }),
-                $("#toast-prompt").slideUp("fast")
-            }
-            ).catch(n => {
-                FuiToast.error("C\xf3 lỗi khi lấy nhạc từ API!")
-            }
-            )
-        }()
+    if(getCookie('toast') === 'close') {
+        $("#toast-prompt").hide();
+    } else {
+        $("#toast-prompt").show();
+    }
+
+    $(window).scroll(function() {
+        var scroHei = $(window).scrollTop();
+        if (scroHei > 500) {
+            $('.back-to-top').css('top','-200px');
+        } else {                                                
+            $('.back-to-top').css('top','-999px');
+        }
     });
+
+    $('.back-to-top').click(function() {
+        $('body,html').animate({
+            scrollTop: 0
+        }, 600);
+    });
+
+    $("body").on("click", ".close-btn", function() {
+        $("#toast-prompt").slideUp("fast", function() {
+            let n = new Date(Date.now() + 10 * 60 * 1000).toUTCString(); // 10 phút
+            document.cookie = `toast=close; expires=${n}; path=/`;
+        });
+        FuiToast.success("Không hiển thị lại trong 10 phút.");
+    });
+
+    $("body").on("click", ".confirm-btn", function() {
+        (function n() {
+            fetch("https://api.thanhdieu.com/rand-music.php").then(n => n.json()).then(t => {
+                let e = t.musicUrl,
+                    i = new Audio(e),
+                    h = new Promise((resolve, reject) => {
+                        i.play().then(() => {
+                            resolve(t);
+                        }).catch(err => {
+                            reject("Không thể phát nhạc ngay lúc này.");
+                        });
+                        i.addEventListener("ended", function() {
+                            resolve("Đã chuyển sang bài hát mới.");
+                            n();
+                        });
+                    });
+                FuiToast.promise(h, {
+                    loading: "Đang chờ phát nhạc...",
+                    success: n => n.titleTracks,
+                    error: "Có lỗi khi phát nhạc!"
+                }, {
+                    isClose: true
+                });
+                $("#toast-prompt").slideUp("fast");
+            }).catch(err => {
+                FuiToast.error("Có lỗi khi lấy nhạc từ API!");
+            });
+        })();
+    });
+});
