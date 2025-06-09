@@ -18,7 +18,7 @@
 		offline: { color: "#7e828c", text: "Offline", glow: "none" },
 		streaming: {
 			color: "#593695",
-			text: "Streaming",
+			text: "Phát Trực Tiếp",
 			glow: "0 0 5px 2px #593695",
 		},
 	};
@@ -39,7 +39,7 @@
 			)
 		) {
 			color = "#593695";
-			text = "Streaming";
+			text = "Phát Trực Tiếp";
 			glow = "0 0 5px 2px #593695";
 		}
 		elements.statusDot.style.backgroundColor = color;
@@ -72,10 +72,10 @@
 	}
 	function updateRpc(d) {
 		const ActivityType = [
-			"Playing",
-			"Streaming to",
-			"Listening to",
-			"Watching",
+			"Đang Chơi",
+			"Phát Trực Tiếp (Streaming)",
+			"Đang Nghe Trên",
+			"Đang Xem",
 			"Custom status",
 			"Competing in",
 		];
