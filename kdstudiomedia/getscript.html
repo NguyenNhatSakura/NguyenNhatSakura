@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>NguyenNhatIT | Get Script</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css"
+    rel="stylesheet"
+    id="prism-theme"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+  <link rel="stylesheet" href="../css/fuiToast.min.css" />
+  <link
+    rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Playpen+Sans&amp;family=Great+Vibes&amp;family=Passion+One&amp;family=Poetsen+One&amp;display=swap"
+    as="style"
+    onload="this.rel='stylesheet'"
+  />
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #1e1e2f;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .logo {
+      width: 250px;
+      margin-bottom: 20px;
+    }
+
+    .mac-window {
+      width: 90%;
+      max-width: 900px;
+      border-radius: 12px;
+      overflow: hidden;
+      background-color: #2e2e38;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+      animation: fadeInUp 0.6s ease-out;
+      position: relative;
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        transform: translateY(30px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .mac-header {
+      background-color: #3b3b3b;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      padding: 0 15px;
+      position: relative;
+    }
+
+    .mac-buttons {
+      display: flex;
+      gap: 8px;
+    }
+
+    .mac-buttons span {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+
+    .close {
+      background-color: #ff5f56;
+    }
+    .minimize {
+      background-color: #ffbd2e;
+    }
+    .maximize {
+      background-color: #27c93f;
+    }
+
+    .copy-btn {
+      position: absolute;
+      right: 50px;
+      top: 5px;
+      background: #00bcd4;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 6px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.2s ease;
+    }
+
+    .copy-btn:hover {
+      background: #0097a7;
+    }
+
+    .theme-toggle {
+      position: absolute;
+      right: 10px;
+      top: 5px;
+      background: #666;
+      border: none;
+      color: #fff;
+      padding: 6px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    pre {
+      margin: 0;
+      background: transparent;
+      padding: 20px;
+      overflow-x: auto;
+      font-size: 14px;
+      line-height: 1.5;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+
+    @media (max-width: 600px) {
+      .copy-btn,
+      .theme-toggle {
+        font-size: 12px;
+        padding: 4px 10px;
+      }
+    }
+
+    /* Alert box style from CodePen */
+    .alert-box {
+      background: #f44336;
+      color: white;
+      padding: 20px;
+      margin-top: 20px;
+      border-radius: 6px;
+      max-width: 600px;
+      width: 90%;
+      font-family: 'Poetsen One', cursive;
+      font-size: 16px;
+      text-align: center;
+      animation: fadeIn 0.6s ease-out;
+    }
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <img
+    class="logo"
+    src="https://blogger.googleusercontent.com/img/a/AVvXsEgghcATfQEbt_XbU_zDfQ1K3da3louxJ7oWbf-Yx_PURHH9o9XzwNpkPTG_-CqmyydTbLtGaxRLTnch-YiCihWdSpbzqbQcEu4SkKQJCciM_slbfhWrOy56dt-WAfijy1bY30quKl4B9Z1NuoMfwO6HYLD3Kbf7yIE0MICYuOL3DtnIsfMFhm8xIn7P4T9W=s1024"
+    alt="Logo"
+  />
+
+  <div class="mac-window">
+    <div class="mac-header">
+      <div class="mac-buttons">
+        <span class="close"></span>
+        <span class="minimize"></span>
+        <span class="maximize"></span>
+      </div>
+      <button class="copy-btn" onclick="copyCode()">
+        <i class="fas fa-copy"></i> Sao Chép
+      </button>
+      <button class="theme-toggle" onclick="toggleTheme()">
+        <i class="fas fa-adjust"></i>
+      </button>
+    </div>
+    <pre><code id="codeContent" class="language-lua">Đang tải...</code></pre>
+  </div>
+
+  <div id="alertContainer"></div>
+
+  <div id="fui-toast"></div>
+
+  <!-- JS Libraries -->
+  <script src="../scripts/fuiToast.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-lua.min.js"></script>
+
+  <!-- Script -->
+  <script>
+    function getParam(name) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(name);
+    }
+
+    const contenURL = getParam('conten');
+    const codeElement = document.getElementById('codeContent');
+    const alertContainer = document.getElementById('alertContainer');
+
+    function copyCode() {
+      navigator.clipboard
+        .writeText(codeElement.textContent)
+        .then(() => FuiToast.success('Đã sao chép thành công!'))
+        .catch(() => FuiToast.error('Lỗi khi sao chép!'));
+    }
+
+    // Validate and display code
+    const isValidGitRaw =
+      contenURL &&
+      /^https:\/\/raw\.githubusercontent\.com\/[\w\-\/.]+$/.test(contenURL);
+
+    if (contenURL) {
+      alertContainer.innerHTML = '';
+      if (isValidGitRaw) {
+        const outputCode = `local a = '${contenURL}'\nloadstring(game:HttpGet(a))()`;
+        codeElement.textContent = outputCode;
+        Prism.highlightElement(codeElement);
+      } else {
+        codeElement.textContent = '';
+        alertContainer.innerHTML =
+          '<div class="alert-box">❌ URL phải thuộc <b>raw.githubusercontent.com</b></div>';
+        FuiToast.error('URL phải thuộc raw.githubusercontent.com');
+      }
+    } else {
+      codeElement.textContent = '';
+      alertContainer.innerHTML =
+        "<div class='alert-box'>⚠️ Không tìm thấy tham số <b>'conten'</b> trên URL.</div>";
+      FuiToast.error('Không có URL nào được truyền vào.');
+    }
+
+    // Theme toggle
+    let isDark = true;
+    function toggleTheme() {
+      const link = document.getElementById('prism-theme');
+      isDark = !isDark;
+      document.body.style.background = isDark ? '#1e1e2f' : '#f0f0f0';
+      document.body.style.color = isDark ? '#fff' : '#000';
+      link.href = isDark
+        ? 'https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css'
+        : 'https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css';
+    }
+  </script>
+</body>
+</html>
