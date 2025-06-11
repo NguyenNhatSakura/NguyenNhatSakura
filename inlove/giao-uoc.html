@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3 Năm Chờ Đợi ❤️</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playpen+Sans&amp;family=Great+Vibes&amp;family=Passion+One&amp;family=Poetsen+One&amp;display=swap" as="style" onload="this.rel='stylesheet'" />
-    <link rel="stylesheet" href="../styles/fuiToast.min.css">
-    <link rel="icon" href="../src/favicon.ico" type="image/png">
     <style>
         :root {
             --pink-light: #ff9a9e;
@@ -354,8 +351,8 @@
             <h2 class="popup-title">❤️ Chào mừng đến với Trang Đếm Ngược Tình Yêu ❤️</h2>
             <p class="popup-message">Bạn có muốn truy cập trang đặc biệt này để bắt đầu hành trình 3 năm yêu thương không?</p>
             <div class="popup-buttons">
-                <button class="popup-btn decline" id="declineBtn">Không, Tiếp Tục</button>
-                <button class="popup-btn accept" id="acceptBtn">Xem Ngay</button>
+                <button class="popup-btn decline" id="declineBtn">Xem Ngay</button>
+                <button class="popup-btn accept" id="acceptBtn">Không, Tiếp Tục Xem 3 Năm Chờ Đợi</button>
             </div>
         </div>
     </div>
@@ -393,11 +390,13 @@
         <div class="music-control" id="musicControl">
             <i class="fas fa-music"></i>
             <audio id="bgMusic" loop>
-                <source src="../src/assets/cuoidi.m4a" type="audio/mpeg">
+                <!-- Thay bằng link nhạc của bạn -->
+                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                <!-- Hoặc dùng file local -->
+                <!-- <source src="cuoidi.mp3" type="audio/mpeg"> -->
             </audio>
         </div>
     </div>
-    <div id="fui-toast"></div>
 
     <script>
         // ========== POPUP XÁC NHẬN ==========
@@ -483,18 +482,34 @@
         const bgMusic = document.getElementById('bgMusic');
         let isPlaying = false;
 
-        musicControl.addEventListener('click', () => {
+        // Sửa lỗi: Thêm sự kiện play/pause
+        musicControl.addEventListener('click', function() {
             if (isPlaying) {
                 bgMusic.pause();
                 musicControl.innerHTML = '<i class="fas fa-music"></i>';
-                fuiToast.fuiToast('Nhạc đã dừng');
             } else {
-                bgMusic.play();
-                musicControl.innerHTML = '<i class="fas fa-pause"></i>';
-                fuiToast.fuiToast('Nhạc đã phát');
+                // Sửa lỗi: Thêm promise để xử lý autoplay policy
+                const playPromise = bgMusic.play();
+                
+                if (playPromise !== undefined) {
+                    playPromise.then(_ => {
+                        // Phát nhạc thành công
+                        musicControl.innerHTML = '<i class="fas fa-pause"></i>';
+                    })
+                    .catch(error => {
+                        // Xử lý lỗi phát nhạc
+                        console.log("Lỗi phát nhạc:", error);
+                        alert("Vui lòng tương tác với trang trước khi phát nhạc");
+                    });
+                }
             }
             isPlaying = !isPlaying;
         });
+
+        // Sửa lỗi: Cho phép tương tác trước khi phát nhạc
+        document.addEventListener('click', function() {
+            bgMusic.muted = false;
+        }, { once: true });
 
         // ========== ĐẾM NGƯỢC ==========
         // Set ngày kết thúc (11/6/2028)
@@ -532,6 +547,5 @@
         updateCountdown();
         const countdownInterval = setInterval(updateCountdown, 1000);
     </script>
-    <script src="../scripts/fuiToast.min.js"></script>
 </body>
 </html>
