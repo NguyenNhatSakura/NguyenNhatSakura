@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3 Năm Chờ Đợi ❤️</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playpen+Sans&amp;family=Great+Vibes&amp;family=Passion+One&amp;family=Poetsen+One&amp;display=swap" as="style" onload="this.rel='stylesheet'" />
+    <link rel="stylesheet" href="../styles/fuiToast.min.css">
+    <link rel="icon" href="../src/favicon.ico" type="image/png">
+    <style>
+        :root {
+            --pink-light: #ff9a9e;
+            --pink-dark: #fad0c4;
+            --text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--pink-light), var(--pink-dark));
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Hiệu ứng bong bóng */
+        .bubble {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            z-index: -1;
+            animation: floatBubble 15s linear infinite;
+        }
+
+        @keyframes floatBubble {
+            0% {
+                transform: translateY(100vh) scale(0.5);
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.4;
+            }
+            100% {
+                transform: translateY(-100px) scale(1.2);
+                opacity: 0;
+            }
+        }
+
+        /* Container chính */
+        .love-container {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 40px;
+            width: 90%;
+            max-width: 800px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            transform: scale(0.95);
+            animation: fadeIn 1s ease-out forwards;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes fadeIn {
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Hiệu ứng ánh sáng lấp lánh */
+        .love-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: shine 8s infinite linear;
+            z-index: -1;
+        }
+
+        @keyframes shine {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            text-shadow: var(--text-shadow);
+            background: linear-gradient(to right, #fff, #ffe6e6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textGlow 2s infinite alternate;
+        }
+
+        @keyframes textGlow {
+            from {
+                text-shadow: 0 0 10px rgba(255,255,255,0.3);
+            }
+            to {
+                text-shadow: 0 0 20px rgba(255,255,255,0.8), 0 0 30px rgba(255,192,203,0.6);
+            }
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        /* Countdown */
+        #countdown {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+
+        .countdown-box {
+            background: rgba(255, 255, 255, 0.25);
+            border-radius: 15px;
+            padding: 25px 15px;
+            min-width: 120px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .countdown-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .countdown-box::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, var(--pink-light), var(--pink-dark));
+        }
+
+        .countdown-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            background: linear-gradient(to bottom, #fff, #ffe6e6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .countdown-label {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.8;
+        }
+
+        /* Message */
+        .love-message {
+            font-size: 1.4rem;
+            line-height: 1.6;
+            margin: 30px 0;
+            text-shadow: var(--text-shadow);
+        }
+
+        .highlight {
+            color: #fffacd;
+            font-weight: bold;
+            position: relative;
+            display: inline-block;
+        }
+
+        .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: currentColor;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease;
+        }
+
+        .highlight:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        /* Nút nhạc */
+        .music-control {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+
+        .music-control:hover {
+            transform: scale(1.1);
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .music-control i {
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        /* Popup xác nhận */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .popup-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .popup-container {
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            padding: 30px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            transform: scale(0.8);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .popup-overlay.active .popup-container {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .popup-title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: white;
+            text-shadow: var(--text-shadow);
+        }
+
+        .popup-message {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .popup-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .popup-btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .popup-btn.accept {
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            color: white;
+        }
+
+        .popup-btn.decline {
+            background: rgba(255, 255, 255, 0.3);
+            color: white;
+        }
+
+        .popup-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Trái tim bay */
+        .heart {
+            position: absolute;
+            pointer-events: none;
+            animation: floatHeart 8s ease-in-out infinite;
+            opacity: 0;
+            z-index: -1;
+            font-size: 24px;
+        }
+
+        @keyframes floatHeart {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Popup xác nhận -->
+    <div class="popup-overlay active" id="popupOverlay">
+        <div class="popup-container">
+            <h2 class="popup-title">❤️ Chào mừng đến với Trang Đếm Ngược Tình Yêu ❤️</h2>
+            <p class="popup-message">Bạn có muốn truy cập trang đặc biệt này để bắt đầu hành trình 3 năm yêu thương không?</p>
+            <div class="popup-buttons">
+                <button class="popup-btn decline" id="declineBtn">Không, Tiếp Tục</button>
+                <button class="popup-btn accept" id="acceptBtn">Xem Ngay</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Giao diện chính -->
+    <div class="love-container" id="mainContent" style="display: none;">
+        <h1>Đếm Ngược Ngày Rước Em Về Nhà</h1>
+        <p class="subtitle">3 năm nữa chúng ta sẽ bên nhau mãi mãi ❤️</p>
+        
+        <div id="countdown">
+            <div class="countdown-box">
+                <div class="countdown-number" id="days">00</div>
+                <div class="countdown-label">Ngày</div>
+            </div>
+            <div class="countdown-box">
+                <div class="countdown-number" id="hours">00</div>
+                <div class="countdown-label">Giờ</div>
+            </div>
+            <div class="countdown-box">
+                <div class="countdown-number" id="minutes">00</div>
+                <div class="countdown-label">Phút</div>
+            </div>
+            <div class="countdown-box">
+                <div class="countdown-number" id="seconds">00</div>
+                <div class="countdown-label">Giây</div>
+            </div>
+        </div>
+        
+        <div class="love-message">
+            <p>Từ hôm nay <span class="highlight" id="startDate"></span>, anh sẽ đếm từng giây</p>
+            <p>Để đến ngày <span class="highlight">11/6/2028</span>, chúng ta sẽ chính thức thuộc về nhau 💍</p>
+        </div>
+
+        <!-- Nút nhạc -->
+        <div class="music-control" id="musicControl">
+            <i class="fas fa-music"></i>
+            <audio id="bgMusic" loop>
+                <source src="../src/assets/cuoidi.m4a" type="audio/mpeg">
+            </audio>
+        </div>
+    </div>
+    <div id="fui-toast"></div>
+
+    <script>
+        // ========== POPUP XÁC NHẬN ==========
+        const popupOverlay = document.getElementById('popupOverlay');
+        const acceptBtn = document.getElementById('acceptBtn');
+        const declineBtn = document.getElementById('declineBtn');
+        const mainContent = document.getElementById('mainContent');
+
+        // Hiển thị nội dung chính khi đồng ý
+        acceptBtn.addEventListener('click', () => {
+            popupOverlay.classList.remove('active');
+            mainContent.style.display = 'block';
+            document.body.style.overflow = 'auto';
+            
+            // Lưu vào localStorage để lần sau không hiện popup nữa
+            localStorage.setItem('loveCountdownAccepted', 'true');
+            
+            // Tạo hiệu ứng bong bóng
+            createBubbles();
+        });
+
+        // Chuyển hướng khi từ chối
+        declineBtn.addEventListener('click', () => {
+            window.location.href = './index.html';
+        });
+
+        // Kiểm tra nếu đã đồng ý trước đó
+        if (localStorage.getItem('loveCountdownAccepted') === 'true') {
+            popupOverlay.style.display = 'none';
+            mainContent.style.display = 'block';
+            document.body.style.overflow = 'auto';
+            createBubbles();
+        }
+
+        // ========== HIỆU ỨNG ==========
+        // Tạo bong bóng
+        function createBubbles() {
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => {
+                    const bubble = document.createElement('div');
+                    bubble.classList.add('bubble');
+                    bubble.style.width = `${Math.random() * 100 + 50}px`;
+                    bubble.style.height = bubble.style.width;
+                    bubble.style.left = `${Math.random() * 100}vw`;
+                    bubble.style.animationDuration = `${Math.random() * 10 + 10}s`;
+                    document.body.appendChild(bubble);
+                    
+                    // Xóa bong bóng sau khi animation kết thúc
+                    setTimeout(() => {
+                        bubble.remove();
+                    }, 15000);
+                }, i * 300);
+            }
+            
+            // Tạo bong bóng liên tục
+            setInterval(() => {
+                createBubbles();
+            }, 3000);
+        }
+
+        // Tạo trái tim bay
+        function createHearts() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️';
+            heart.style.left = `${Math.random() * 100}vw`;
+            heart.style.top = `${Math.random() * 100 + 100}vh`;
+            heart.style.fontSize = `${Math.random() * 20 + 15}px`;
+            heart.style.animationDuration = `${Math.random() * 5 + 5}s`;
+            document.body.appendChild(heart);
+            
+            // Xóa trái tim sau khi bay xong
+            setTimeout(() => {
+                heart.remove();
+            }, 8000);
+        }
+
+        // Tạo trái tim mỗi 2 giây
+        setInterval(createHearts, 2000);
+
+        // ========== NHẠC NỀN ==========
+        const musicControl = document.getElementById('musicControl');
+        const bgMusic = document.getElementById('bgMusic');
+        let isPlaying = false;
+
+        musicControl.addEventListener('click', () => {
+            if (isPlaying) {
+                bgMusic.pause();
+                musicControl.innerHTML = '<i class="fas fa-music"></i>';
+                fuiToast.fuiToast('Nhạc đã dừng');
+            } else {
+                bgMusic.play();
+                musicControl.innerHTML = '<i class="fas fa-pause"></i>';
+                fuiToast.fuiToast('Nhạc đã phát');
+            }
+            isPlaying = !isPlaying;
+        });
+
+        // ========== ĐẾM NGƯỢC ==========
+        // Set ngày kết thúc (11/6/2028)
+        const countDownDate = new Date("June 11, 2028 00:00:00").getTime();
+        
+        // Hiển thị ngày bắt đầu
+        const startDateEl = document.getElementById('startDate');
+        const startDate = new Date();
+        startDateEl.textContent = `(${startDate.toLocaleDateString('vi-VN')})`;
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            
+            if (distance < 0) {
+                clearInterval(countdownInterval);
+                document.getElementById('countdown').innerHTML = `
+                    <div style="grid-column: 1/-1; font-size: 2.5rem; padding: 30px;">
+                        💍 Đã đến ngày cưới rồi! 💕
+                    </div>`;
+            }
+        }
+
+        // Cập nhật mỗi giây
+        updateCountdown();
+        const countdownInterval = setInterval(updateCountdown, 1000);
+    </script>
+    <script src="../scripts/fuiToast.min.js"></script>
+</body>
+</html>
