@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temp Pro Chat</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database-compat.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Welcome Screen -->
+        <div class="welcome-screen" id="welcomeScreen">
+            <div class="welcome-content">
+                <div class="app-logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-comment-dots"></i>
+                    </div>
+                    <h1>Temp Pro Chat 2</h1>
+                    <p class="tagline">Secure real-time conversations</p>
+                </div>
+                
+                <div class="action-buttons">
+                    <button id="createChatBtn" class="btn primary">
+                        <i class="fas fa-plus-circle"></i> New Chat
+                    </button>
+                    
+                    <div class="divider">
+                        <span>or</span>
+                    </div>
+                    
+                    <div class="join-section">
+                        <input type="text" id="chatIdInput" placeholder="Enter Chat ID">
+                        <button id="joinChatBtn" class="btn secondary">
+                            <i class="fas fa-arrow-right-to-bracket"></i> Join
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="app-footer">
+                <p>Messages disappear when chat ends | v2.0</p>
+            </div>
+        </div>
+
+        <!-- Chat Screen -->
+        <div class="chat-screen hidden" id="chatContainer">
+            <div class="chat-header">
+                <button class="back-btn" id="leaveChatBtn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                
+                <div class="chat-info">
+                    <div class="chat-id">
+                        <span id="displayChatId"></span>
+                        <button id="copyChatIdBtn">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="connection-status">
+                        <i class="fas fa-circle"></i> <span id="statusText">Connecting...</span>
+                    </div>
+                </div>
+                
+                <div class="header-actions">
+                    <button class="icon-btn" id="participantsBtn" title="Participants">
+                        <i class="fas fa-users"></i>
+                    </button>
+                    <button class="icon-btn" id="shareBtn" title="Share">
+                        <i class="fas fa-share-alt"></i>
+                    </button>
+                    <button class="icon-btn" id="settingsBtn" title="Settings">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="chat-messages" id="chatMessages"></div>
+            
+            <div class="chat-input-container">
+                <div class="input-wrapper">
+                    <button class="emoji-btn" id="emojiBtn">
+                        <i class="far fa-smile"></i>
+                    </button>
+                    <input type="text" id="messageInput" placeholder="Type a message..." autocomplete="off">
+                    <button id="sendMessageBtn" class="send-btn">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Session Expiring Screen -->
+        <div class="expiring-overlay hidden" id="sessionExpiring">
+            <div class="expiring-content">
+                <div class="expiring-icon">
+                    <i class="fas fa-hourglass-end"></i>
+                </div>
+                <h2>Chat Expiring</h2>
+                <p>Other participant left. This chat will close in <span id="countdown">10</span> seconds.</p>
+                <button class="btn secondary" id="closeNowBtn">
+                    Close Now
+                </button>
+            </div>
+        </div>
+
+        <!-- Share Modal -->
+        <div class="modal-overlay hidden" id="shareModal">
+            <div class="modal-content share-modal">
+                <div class="modal-header">
+                    <h3>Share Chat</h3>
+                    <button class="close-btn" id="closeShareBtn">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Share this link to invite others:</p>
+                    <div class="share-link-container">
+                        <input type="text" id="shareLinkInput" readonly>
+                        <button id="copyShareBtn" class="icon-btn small">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="share-buttons">
+                        <button class="share-option" id="shareWhatsApp">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </button>
+                        <button class="share-option" id="shareTelegram">
+                            <i class="fab fa-telegram"></i> Telegram
+                        </button>
+                        <button class="share-option" id="shareEmail">
+                            <i class="fas fa-envelope"></i> Email
+                        </button>
+                    </div>
+                    <div class="qr-code-container">
+                        <canvas id="qrCodeCanvas"></canvas>
+                        <p>Scan to join</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Participants Modal -->
+        <div class="modal-overlay hidden" id="participantsModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Participants</h3>
+                    <button class="close-btn" id="closeParticipantsBtn">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ul class="participants-list" id="participantsList">
+                        <!-- Participants will be added here -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Settings Modal -->
+        <div class="modal-overlay hidden" id="settingsModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Settings</h3>
+                    <button class="close-btn" id="closeSettingsBtn">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="settings-option">
+                        <label for="darkModeToggle">Dark Mode</label>
+                        <label class="switch">
+                            <input type="checkbox" id="darkModeToggle" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div class="settings-option">
+                        <label for="notificationToggle">Notifications</label>
+                        <label class="switch">
+                            <input type="checkbox" id="notificationToggle" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div class="settings-option">
+                        <label for="soundToggle">Message Sounds</label>
+                        <label class="switch">
+                            <input type="checkbox" id="soundToggle" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <button class="btn danger" id="clearChatBtn">
+                        <i class="fas fa-trash"></i> Clear Chat History
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Emoji Picker -->
+        <div class="emoji-picker hidden" id="emojiPicker"></div>
+    </div>
+
+    <!-- Audio Elements -->
+    <audio id="messageSound" src="https://assets.mixkit.co/sfx/preview/mixkit-software-interface-start-2574.mp3" preload="auto"></audio>
+    <audio id="notificationSound" src="https://assets.mixkit.co/sfx/preview/mixkit-correct-answer-tone-2870.mp3" preload="auto"></audio>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emoji-mart/data"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emoji-mart/react"></script>
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
