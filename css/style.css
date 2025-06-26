@@ -2586,3 +2586,31 @@ footer .footer-box {
     text-align: center !important;
   }
 }
+/* Star Background */
+.star-background {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  background-color: var(--black); /* Base background */
+}
+
+.star {
+  position: absolute;
+  background-color: var(--white);
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: twinkle infinite ease-in-out;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
