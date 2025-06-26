@@ -45,6 +45,9 @@
     }
 </style>
   <body oncontextmenu="return true;">
+    <div class="star-background">
+      <!-- Stars will be dynamically added here by JavaScript -->
+    </div>
     <button id="scroll-to-bento" onclick="scrollToBento()" alt="stolen from autumn">
       <svg stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" fill="none" viewBox="0 0 512 512">
         <path d="M112 184l144 144 144-144"></path>
@@ -55,7 +58,7 @@
         <div class="about-me" id="about-me">
           <div class="avatar-box bubble-trigger" onclick="toggleOpacity()">
             <img title="Artist: Edgar, pixiv: 5833213" class="avatar" src="src/assets/images/profile/me.png" alt="Avatar" />
-            <img src="https://thanhdieu.com/assets/img/mong-vuot-rong.png" class="avatar-pendant" alt="Heart Pendant" />
+            <img src="src/assets/images/profile/legacy.webp" class="avatar-pendant" alt="Heart Pendant" />
             <div class="hairclip item mctooltip" style="display: none">
               <div class="tooltip" style="display: none">
                 <span>Carved Pumpkin</span>
@@ -197,7 +200,7 @@
               </div>
               <div class="meta">
                 <b>Discord</b>
-                <p>SPYDER X</p>
+                <p>GodsWave</p>
               </div>
               <div style="background-color: #5865f2; border-radius: 5px" class="follow"> Join Server </div>
             </div>
@@ -299,6 +302,7 @@
     <script defer src="scripts/lanyard.js"></script>
     <!-- <script defer src="./scripts/slide.js"></script> -->
     <script src="scripts/fuiToast.min.js"></script>
+    <script src="godswave/assets/scr/starts.js"></script>
     <div style="display: none" class="back-to-top"></div>
     <div class="animeTWD">
       <div class="animeBlurTWD">
